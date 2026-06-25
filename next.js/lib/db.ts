@@ -16,14 +16,22 @@ const getDbData = () => {
         }
       }
       if (updated) {
-        fs.writeFileSync(dbFilePath, JSON.stringify(data, null, 2), 'utf-8');
+        try {
+          fs.writeFileSync(dbFilePath, JSON.stringify(data, null, 2), 'utf-8');
+        } catch (e) {
+          console.warn('Failed to write database file (read-only filesystem):', e);
+        }
       }
       return data;
     } catch (e) {
       return JSON.parse(JSON.stringify(SEED_DATA));
     }
   } else {
-    fs.writeFileSync(dbFilePath, JSON.stringify(SEED_DATA, null, 2), 'utf-8');
+    try {
+      fs.writeFileSync(dbFilePath, JSON.stringify(SEED_DATA, null, 2), 'utf-8');
+    } catch (e) {
+      console.warn('Failed to write database file (read-only filesystem):', e);
+    }
     return JSON.parse(JSON.stringify(SEED_DATA));
   }
 };
@@ -37,10 +45,19 @@ export const db = {
   set<K extends keyof typeof SEED_DATA>(key: K, value: any) {
     const data = getDbData();
     data[key] = value;
-    fs.writeFileSync(dbFilePath, JSON.stringify(data, null, 2), 'utf-8');
+    try {
+      fs.writeFileSync(dbFilePath, JSON.stringify(data, null, 2), 'utf-8');
+    } catch (e) {
+      console.warn('Failed to write database file (read-only filesystem):', e);
+    }
   },
   
   reset() {
-    fs.writeFileSync(dbFilePath, JSON.stringify(SEED_DATA, null, 2), 'utf-8');
+    try {
+      fs.writeFileSync(dbFilePath, JSON.stringify(SEED_DATA, null, 2), 'utf-8');
+    } catch (e) {
+      console.warn('Failed to write database file (read-only filesystem):', e);
+    }
   }
 };
+
