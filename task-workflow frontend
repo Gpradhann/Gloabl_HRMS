@@ -1,0 +1,57 @@
+# WorkFlow HRMS — Task Tracker
+
+## Phase 1 — Foundation
+- [x] Update globals.css (teal/orange design tokens, Inter font, animations)
+- [x] Update app/layout.tsx (Inter font, WorkFlow metadata)
+- [x] Create stores/hrmsStore.ts (Zustand: activeRole, copilotOpen, currentView)
+- [x] Create data/types.ts (all TypeScript interfaces)
+- [x] Create data/employees.ts
+- [x] Create data/attendance.ts
+- [x] Create data/leave.ts
+- [x] Create data/payroll.ts
+- [x] Create data/documents.ts
+- [x] Create data/expenses.ts
+- [x] Create data/performance.ts
+- [x] Create data/contributions.ts
+- [x] Create data/training.ts
+- [x] Create data/recruitment.ts
+- [x] Create data/recognition.ts
+- [x] Create data/announcements.ts
+- [x] Create data/onboarding.ts
+
+## Phase 2 — App Shell
+- [x] Create app/(app)/layout.tsx (shell with header, bottom nav, copilot FAB)
+- [x] Create app/(app)/page.tsx (redirect to /home)
+- [x] Create components/shell/Header.tsx
+- [x] Create components/shell/BottomNav.tsx
+- [x] Create components/shell/RoleSwitcher.tsx
+- [x] Create components/shell/CopilotFAB.tsx
+
+## Phase 3 — Shared UI Components
+- [x] Styled UI elements inline using Tailwind + CSS variables in components to avoid extra file overhead.
+
+## Phase 4 — Module Pages
+- [x] Home dashboard (role-aware)
+- [x] Onboarding (ON-01 to ON-06)
+- [x] Attendance (AT-01 to AT-05)
+- [x] Leave Management (LV-01 to LV-04)
+- [x] Payroll & Compliance (PR-01 to PR-03)
+- [x] Configure Backend (CORS, URLs, Azure, Telemetry)
+- [/] Implement Multi-Entity Feature Support in EF Core Configs & Repositories
+- [x] Expenses & Reimbursements (EX-01 to EX-03)
+- [x] Performance & Goals (PF-01 to PF-03)
+- [x] Contributions (CN-01 to CN-04)
+- [x] Training & Learning (TR-01 to TR-03)
+- [x] Recruitment (RC-01 to RC-04)
+- [x] Recognition (RG-01 to RG-02)
+- [x] Announcements (AN-01 to AN-03)
+- [x] Team Management (TM-01)
+- [x] Analytics (AY-01 to AY-02)
+
+## Phase 5 — AI Copilot
+- [x] Create app/api/copilot/route.ts
+- [x] Create components/copilot/CopilotDrawer.tsx
+
+## Verification
+- [x] npm run build (0 errors)
+- [x] Manual QA all 15 modules

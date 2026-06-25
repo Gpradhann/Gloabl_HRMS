@@ -1,0 +1,2407 @@
+{
+  "employees": [
+    {
+      "id": "emp-001",
+      "name": "Sarah Johnson",
+      "email": "sarah.johnson@workflow.com",
+      "initials": "SJ",
+      "color": "#0d9488",
+      "designation": "Senior Software Engineer",
+      "department": "Engineering",
+      "employmentStatus": "active",
+      "status": "active",
+      "role": "Employee",
+      "managerId": "emp-002",
+      "reportingManagerId": "emp-002",
+      "reportingManager": "Michael Chen",
+      "joiningDate": "2022-03-15",
+      "dateOfJoining": "2022-03-15",
+      "country": "US",
+      "location": "San Francisco, CA",
+      "phone": "+1 415-555-0101",
+      "employeeCode": "WF-001",
+      "employmentType": "full-time",
+      "skills": [
+        "React",
+        "TypeScript",
+        "Node.js"
+      ]
+    },
+    {
+      "id": "emp-002",
+      "name": "Michael Chen",
+      "email": "michael.chen@workflow.com",
+      "initials": "MC",
+      "color": "#8b5cf6",
+      "designation": "Engineering Manager",
+      "department": "Engineering",
+      "employmentStatus": "active",
+      "status": "active",
+      "role": "Manager",
+      "managerId": "emp-004",
+      "reportingManagerId": "emp-004",
+      "reportingManager": "David Williams",
+      "joiningDate": "2020-01-10",
+      "dateOfJoining": "2020-01-10",
+      "country": "US",
+      "location": "San Francisco, CA",
+      "phone": "+1 415-555-0102",
+      "employeeCode": "WF-002",
+      "employmentType": "full-time",
+      "skills": [
+        "Leadership",
+        "Agile",
+        "System Design"
+      ]
+    },
+    {
+      "id": "emp-003",
+      "name": "Priya Sharma",
+      "email": "priya.sharma@workflow.com",
+      "initials": "PS",
+      "color": "#f97316",
+      "designation": "HR Specialist",
+      "department": "Human Resources",
+      "employmentStatus": "active",
+      "status": "active",
+      "role": "HR",
+      "managerId": "emp-004",
+      "reportingManagerId": "emp-004",
+      "reportingManager": "David Williams",
+      "joiningDate": "2021-06-01",
+      "dateOfJoining": "2021-06-01",
+      "country": "IN",
+      "location": "Bangalore, India",
+      "phone": "+91 98765-43210",
+      "employeeCode": "WF-003",
+      "employmentType": "full-time",
+      "skills": [
+        "Recruitment",
+        "Compliance",
+        "HRIS"
+      ]
+    },
+    {
+      "id": "emp-004",
+      "name": "David Williams",
+      "email": "david.williams@workflow.com",
+      "initials": "DW",
+      "color": "#0891b2",
+      "designation": "Chief People Officer",
+      "department": "Executive",
+      "employmentStatus": "active",
+      "status": "active",
+      "role": "Admin",
+      "joiningDate": "2019-01-01",
+      "dateOfJoining": "2019-01-01",
+      "country": "US",
+      "location": "New York, NY",
+      "phone": "+1 212-555-0104",
+      "employeeCode": "WF-004",
+      "employmentType": "full-time",
+      "skills": [
+        "Strategy",
+        "Operations",
+        "Leadership"
+      ]
+    },
+    {
+      "id": "emp-005",
+      "name": "Vikram Nair",
+      "email": "vikram.nair@workflow.com",
+      "initials": "VN",
+      "color": "#ec4899",
+      "designation": "Frontend Developer",
+      "department": "Engineering",
+      "employmentStatus": "active",
+      "status": "active",
+      "role": "Employee",
+      "managerId": "emp-002",
+      "reportingManagerId": "emp-002",
+      "reportingManager": "Michael Chen",
+      "joiningDate": "2023-01-15",
+      "dateOfJoining": "2023-01-15",
+      "country": "IN",
+      "location": "Bangalore, India",
+      "phone": "+91 98765-11111",
+      "employeeCode": "WF-005",
+      "employmentType": "full-time",
+      "skills": [
+        "React",
+        "CSS",
+        "Vue"
+      ]
+    },
+    {
+      "id": "emp-006",
+      "name": "Lisa Park",
+      "email": "lisa.park@workflow.com",
+      "initials": "LP",
+      "color": "#16a34a",
+      "designation": "Product Designer",
+      "department": "Design",
+      "employmentStatus": "active",
+      "status": "active",
+      "role": "Employee",
+      "managerId": "emp-002",
+      "reportingManagerId": "emp-002",
+      "reportingManager": "Michael Chen",
+      "joiningDate": "2022-09-01",
+      "dateOfJoining": "2022-09-01",
+      "country": "US",
+      "location": "Austin, TX",
+      "phone": "+1 512-555-0106",
+      "employeeCode": "WF-006",
+      "employmentType": "full-time",
+      "skills": [
+        "Figma",
+        "UX Research",
+        "Prototyping"
+      ]
+    }
+  ],
+  "attendanceRecords": [
+    {
+      "id": "att-001",
+      "employeeId": "emp-001",
+      "date": "2026-06-24",
+      "clockIn": "22:27",
+      "clockOut": null,
+      "status": "present",
+      "productiveHours": 0,
+      "breakHours": 0,
+      "overtimeHours": 0,
+      "totalHours": 0,
+      "clockMethod": "selfie",
+      "locationVerified": true,
+      "ipValidated": true,
+      "shiftName": "General Shift",
+      "exceptionFlag": null
+    },
+    {
+      "id": "att-002",
+      "employeeId": "emp-001",
+      "date": "2026-06-23",
+      "clockIn": "09:02",
+      "clockOut": "18:15",
+      "status": "present",
+      "productiveHours": 8.5,
+      "breakHours": 0.72,
+      "overtimeHours": 0.25,
+      "totalHours": 9.22,
+      "clockMethod": "selfie",
+      "locationVerified": true,
+      "ipValidated": true,
+      "shiftName": "General Shift",
+      "exceptionFlag": null
+    },
+    {
+      "id": "att-003",
+      "employeeId": "emp-001",
+      "date": "2026-06-22",
+      "clockIn": "09:45",
+      "clockOut": "18:00",
+      "status": "late",
+      "productiveHours": 7.75,
+      "breakHours": 0.5,
+      "overtimeHours": 0,
+      "totalHours": 8.25,
+      "clockMethod": "ip",
+      "locationVerified": false,
+      "ipValidated": true,
+      "shiftName": "General Shift",
+      "exceptionFlag": "Late Arrival"
+    },
+    {
+      "id": "att-004",
+      "employeeId": "emp-001",
+      "date": "2026-06-21",
+      "clockIn": "09:00",
+      "clockOut": "18:00",
+      "status": "present",
+      "productiveHours": 8.5,
+      "breakHours": 0.5,
+      "overtimeHours": 0,
+      "totalHours": 9,
+      "clockMethod": "selfie",
+      "locationVerified": true,
+      "ipValidated": true,
+      "shiftName": "General Shift",
+      "exceptionFlag": null
+    },
+    {
+      "id": "att-005",
+      "employeeId": "emp-001",
+      "date": "2026-06-20",
+      "clockIn": null,
+      "clockOut": null,
+      "status": "on-leave",
+      "productiveHours": 0,
+      "breakHours": 0,
+      "overtimeHours": 0,
+      "totalHours": 0,
+      "clockMethod": "manual",
+      "locationVerified": false,
+      "ipValidated": false,
+      "shiftName": "General Shift",
+      "exceptionFlag": null
+    },
+    {
+      "id": "att-006",
+      "employeeId": "emp-001",
+      "date": "2026-06-19",
+      "clockIn": null,
+      "clockOut": null,
+      "status": "holiday",
+      "productiveHours": 0,
+      "breakHours": 0,
+      "overtimeHours": 0,
+      "totalHours": 0,
+      "clockMethod": "manual",
+      "locationVerified": false,
+      "ipValidated": false,
+      "shiftName": "General Shift",
+      "exceptionFlag": null
+    },
+    {
+      "id": "att-007",
+      "employeeId": "emp-001",
+      "date": "2026-06-18",
+      "clockIn": null,
+      "clockOut": null,
+      "status": "weekend",
+      "productiveHours": 0,
+      "breakHours": 0,
+      "overtimeHours": 0,
+      "totalHours": 0,
+      "clockMethod": "manual",
+      "locationVerified": false,
+      "ipValidated": false,
+      "shiftName": "General Shift",
+      "exceptionFlag": null
+    },
+    {
+      "id": "att-008",
+      "employeeId": "emp-001",
+      "date": "2026-06-17",
+      "clockIn": null,
+      "clockOut": null,
+      "status": "weekend",
+      "productiveHours": 0,
+      "breakHours": 0,
+      "overtimeHours": 0,
+      "totalHours": 0,
+      "clockMethod": "manual",
+      "locationVerified": false,
+      "ipValidated": false,
+      "shiftName": "General Shift",
+      "exceptionFlag": null
+    },
+    {
+      "id": "att-009",
+      "employeeId": "emp-001",
+      "date": "2026-06-16",
+      "clockIn": "08:55",
+      "clockOut": "18:30",
+      "status": "present",
+      "productiveHours": 9,
+      "breakHours": 0.58,
+      "overtimeHours": 0.5,
+      "totalHours": 9.58,
+      "clockMethod": "selfie",
+      "locationVerified": true,
+      "ipValidated": true,
+      "shiftName": "General Shift",
+      "exceptionFlag": null
+    },
+    {
+      "id": "att-010",
+      "employeeId": "emp-001",
+      "date": "2026-06-15",
+      "clockIn": "09:10",
+      "clockOut": "17:45",
+      "status": "present",
+      "productiveHours": 8,
+      "breakHours": 0.58,
+      "overtimeHours": 0,
+      "totalHours": 8.58,
+      "clockMethod": "selfie",
+      "locationVerified": true,
+      "ipValidated": true,
+      "shiftName": "General Shift",
+      "exceptionFlag": null
+    },
+    {
+      "id": "att-011",
+      "employeeId": "emp-005",
+      "date": "2026-06-24",
+      "clockIn": "09:00",
+      "clockOut": null,
+      "status": "present",
+      "productiveHours": 0,
+      "breakHours": 0,
+      "overtimeHours": 0,
+      "totalHours": 0,
+      "clockMethod": "selfie",
+      "locationVerified": true,
+      "ipValidated": true,
+      "shiftName": "General Shift",
+      "exceptionFlag": null
+    },
+    {
+      "id": "att-012",
+      "employeeId": "emp-006",
+      "date": "2026-06-24",
+      "clockIn": "09:15",
+      "clockOut": null,
+      "status": "present",
+      "productiveHours": 0,
+      "breakHours": 0,
+      "overtimeHours": 0,
+      "totalHours": 0,
+      "clockMethod": "selfie",
+      "locationVerified": true,
+      "ipValidated": true,
+      "shiftName": "General Shift",
+      "exceptionFlag": null
+    },
+    {
+      "id": "att-1782367423247",
+      "employeeId": "emp-001",
+      "userId": "emp-001",
+      "date": "2026-06-25",
+      "clockIn": "11:33",
+      "clockOut": null,
+      "clockMethod": "selfie",
+      "status": "present",
+      "productiveHours": 0,
+      "breakHours": 0,
+      "overtimeHours": 0,
+      "totalHours": 0,
+      "locationVerified": true,
+      "ipValidated": true,
+      "shiftName": "General Shift"
+    }
+  ],
+  "currentShift": {
+    "id": "shift-001",
+    "name": "General Shift",
+    "startTime": "09:00",
+    "endTime": "18:00",
+    "days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri"
+    ]
+  },
+  "attendanceSummary": {
+    "present": 18,
+    "absent": 1,
+    "late": 2,
+    "halfDay": 0,
+    "onLeave": 1,
+    "totalWorkingDays": 22
+  },
+  "weeklyHours": [
+    {
+      "day": "Mon",
+      "hours": 9,
+      "overtime": 0
+    },
+    {
+      "day": "Tue",
+      "hours": 8.5,
+      "overtime": 0
+    },
+    {
+      "day": "Wed",
+      "hours": 7.75,
+      "overtime": 0
+    },
+    {
+      "day": "Thu",
+      "hours": 9.25,
+      "overtime": 0.25
+    },
+    {
+      "day": "Fri",
+      "hours": 0,
+      "overtime": 0
+    },
+    {
+      "day": "Sat",
+      "hours": 0,
+      "overtime": 0
+    },
+    {
+      "day": "Sun",
+      "hours": 0,
+      "overtime": 0
+    }
+  ],
+  "leaveBalances": [
+    {
+      "type": "casual",
+      "label": "Casual Leave",
+      "total": 12,
+      "used": 5,
+      "pending": 1,
+      "available": 6,
+      "carriedForward": 0,
+      "color": "#0d9488"
+    },
+    {
+      "type": "sick",
+      "label": "Sick Leave",
+      "total": 10,
+      "used": 2,
+      "pending": 0,
+      "available": 8,
+      "color": "#6366f1"
+    },
+    {
+      "type": "personal",
+      "label": "Personal Leave",
+      "total": 6,
+      "used": 1,
+      "pending": 0,
+      "available": 5,
+      "color": "#f97316"
+    },
+    {
+      "type": "comp-off",
+      "label": "Comp-off",
+      "total": 3,
+      "used": 0,
+      "pending": 0,
+      "available": 3,
+      "color": "#8b5cf6"
+    }
+  ],
+  "leaveRequests": [
+    {
+      "id": "lv-001",
+      "employeeId": "emp-001",
+      "employeeName": "Sarah Johnson",
+      "employeeInitials": "SJ",
+      "leaveType": "casual",
+      "startDate": "2026-06-20",
+      "endDate": "2026-06-20",
+      "totalDays": 1,
+      "reason": "Personal errand - bank appointment",
+      "status": "approved",
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "approved",
+          "date": "2026-06-18"
+        }
+      ],
+      "submittedDate": "2026-06-17"
+    },
+    {
+      "id": "lv-002",
+      "employeeId": "emp-001",
+      "employeeName": "Sarah Johnson",
+      "employeeInitials": "SJ",
+      "leaveType": "sick",
+      "startDate": "2026-07-10",
+      "endDate": "2026-07-11",
+      "totalDays": 2,
+      "reason": "Flu symptoms - doctor recommended rest",
+      "status": "pending",
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "pending"
+        }
+      ],
+      "submittedDate": "2026-06-23"
+    },
+    {
+      "id": "lv-003",
+      "employeeId": "emp-005",
+      "employeeName": "Vikram Nair",
+      "employeeInitials": "VN",
+      "leaveType": "casual",
+      "startDate": "2026-07-01",
+      "endDate": "2026-07-02",
+      "totalDays": 2,
+      "reason": "Family function - sister's wedding",
+      "status": "pending",
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "pending"
+        }
+      ],
+      "submittedDate": "2026-06-22"
+    },
+    {
+      "id": "lv-004",
+      "employeeId": "emp-006",
+      "employeeName": "Lisa Park",
+      "employeeInitials": "LP",
+      "leaveType": "personal",
+      "startDate": "2026-07-05",
+      "endDate": "2026-07-05",
+      "totalDays": 1,
+      "reason": "Moving to new apartment",
+      "status": "pending",
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "pending"
+        }
+      ],
+      "submittedDate": "2026-06-23"
+    },
+    {
+      "id": "lv-005",
+      "employeeId": "emp-001",
+      "employeeName": "Sarah Johnson",
+      "employeeInitials": "SJ",
+      "leaveType": "personal",
+      "startDate": "2026-05-15",
+      "endDate": "2026-05-15",
+      "totalDays": 1,
+      "reason": "Medical appointment",
+      "status": "approved",
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "approved",
+          "date": "2026-05-13"
+        }
+      ],
+      "submittedDate": "2026-05-12"
+    },
+    {
+      "id": "lv-1782320428454",
+      "employeeId": "emp-001",
+      "employeeName": "Sarah Johnson",
+      "employeeInitials": "SJ",
+      "leaveType": "casual",
+      "startDate": "2026-06-25",
+      "endDate": "2026-06-30",
+      "totalDays": 6,
+      "reason": "Medical Emergency",
+      "status": "pending",
+      "submittedDate": "2026-06-24",
+      "approverId": null,
+      "approverComment": null,
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "lv-1782320499064",
+      "employeeId": "emp-001",
+      "employeeName": "Sarah Johnson",
+      "employeeInitials": "SJ",
+      "leaveType": "comp-off",
+      "startDate": "2026-06-26",
+      "endDate": "2026-06-28",
+      "totalDays": 3,
+      "reason": "Family Function",
+      "status": "pending",
+      "submittedDate": "2026-06-24",
+      "approverId": null,
+      "approverComment": null,
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "pending"
+        }
+      ]
+    }
+  ],
+  "payrollRecords": [
+    {
+      "id": "pr-001",
+      "employeeId": "emp-001",
+      "payPeriod": "June 2026",
+      "payDate": "2026-06-30",
+      "country": "US",
+      "status": "paid",
+      "currency": "USD",
+      "earnings": {
+        "basic": 8333,
+        "hra": 0,
+        "specialAllowance": 1000,
+        "bonus": 2000,
+        "overtime": 0,
+        "reimbursements": 0
+      },
+      "deductions": {
+        "incomeTax": 1667,
+        "healthInsurance": 500,
+        "federalTax": 1000,
+        "socialSecurity": 516,
+        "medicare": 121,
+        "stateTax": 416,
+        "pf": 0
+      },
+      "grossPay": 11333,
+      "totalDeductions": 3653,
+      "netPay": 7680
+    },
+    {
+      "id": "pr-002",
+      "employeeId": "emp-001",
+      "payPeriod": "May 2026",
+      "payDate": "2026-05-31",
+      "country": "US",
+      "status": "paid",
+      "currency": "USD",
+      "earnings": {
+        "basic": 8333,
+        "hra": 0,
+        "specialAllowance": 1000,
+        "bonus": 0,
+        "overtime": 250,
+        "reimbursements": 150
+      },
+      "deductions": {
+        "incomeTax": 1667,
+        "healthInsurance": 500,
+        "federalTax": 1000,
+        "socialSecurity": 516,
+        "medicare": 121,
+        "stateTax": 416,
+        "pf": 0
+      },
+      "grossPay": 9733,
+      "totalDeductions": 3653,
+      "netPay": 6080
+    },
+    {
+      "id": "pr-003",
+      "employeeId": "emp-001",
+      "payPeriod": "April 2026",
+      "payDate": "2026-04-30",
+      "country": "US",
+      "status": "paid",
+      "currency": "USD",
+      "earnings": {
+        "basic": 8333,
+        "hra": 0,
+        "specialAllowance": 1000,
+        "bonus": 0,
+        "overtime": 0,
+        "reimbursements": 0
+      },
+      "deductions": {
+        "incomeTax": 1667,
+        "healthInsurance": 500,
+        "federalTax": 1000,
+        "socialSecurity": 516,
+        "medicare": 121,
+        "stateTax": 416,
+        "pf": 0
+      },
+      "grossPay": 9333,
+      "totalDeductions": 3653,
+      "netPay": 5680
+    }
+  ],
+  "documents": [
+    {
+      "id": "doc-001",
+      "employeeId": "emp-001",
+      "name": "Passport",
+      "category": "identity",
+      "status": "verified",
+      "fileName": "passport_sarah.pdf",
+      "fileSize": 2048576,
+      "fileType": "application/pdf",
+      "uploadDate": "2022-03-10",
+      "verifiedDate": "2022-03-12",
+      "expiryDate": "2029-03-09",
+      "isRequired": true
+    },
+    {
+      "id": "doc-002",
+      "employeeId": "emp-001",
+      "name": "Offer Letter",
+      "category": "employment",
+      "status": "verified",
+      "fileName": "offer_letter.pdf",
+      "fileSize": 512000,
+      "fileType": "application/pdf",
+      "uploadDate": "2022-03-15",
+      "verifiedDate": "2022-03-15",
+      "isRequired": true
+    },
+    {
+      "id": "doc-003",
+      "employeeId": "emp-001",
+      "name": "Social Security Card",
+      "category": "tax",
+      "status": "verified",
+      "fileName": "ssn_card.pdf",
+      "fileSize": 1024000,
+      "fileType": "application/pdf",
+      "uploadDate": "2022-03-15",
+      "verifiedDate": "2022-03-16",
+      "isRequired": true
+    },
+    {
+      "id": "doc-004",
+      "employeeId": "emp-001",
+      "name": "Degree Certificate",
+      "category": "education",
+      "status": "uploaded",
+      "fileName": "btech_cert.pdf",
+      "fileSize": 3145728,
+      "fileType": "application/pdf",
+      "uploadDate": "2022-04-01",
+      "isRequired": true
+    },
+    {
+      "id": "doc-005",
+      "employeeId": "emp-001",
+      "name": "Work Permit",
+      "category": "work-auth",
+      "status": "missing",
+      "isRequired": false
+    },
+    {
+      "id": "doc-006",
+      "employeeId": "emp-001",
+      "name": "I-9 Form",
+      "category": "work-auth",
+      "status": "verified",
+      "fileName": "i9_form.pdf",
+      "fileSize": 512000,
+      "fileType": "application/pdf",
+      "uploadDate": "2022-03-15",
+      "verifiedDate": "2022-03-15",
+      "isRequired": true
+    },
+    {
+      "id": "doc-007",
+      "employeeId": "emp-001",
+      "name": "NDA Agreement",
+      "category": "employment",
+      "status": "verified",
+      "fileName": "nda_signed.pdf",
+      "fileSize": 256000,
+      "fileType": "application/pdf",
+      "uploadDate": "2022-03-15",
+      "verifiedDate": "2022-03-15",
+      "isRequired": true
+    },
+    {
+      "id": "doc-008",
+      "employeeId": "emp-001",
+      "name": "Health Insurance Card",
+      "category": "other",
+      "status": "uploaded",
+      "fileName": "health_card.jpg",
+      "fileSize": 768000,
+      "fileType": "image/jpeg",
+      "uploadDate": "2022-04-15",
+      "isRequired": false
+    }
+  ],
+  "reimbursements": [
+    {
+      "id": "exp-1782365919768",
+      "employeeId": "emp-001",
+      "employeeName": "Sarah Johnson",
+      "employeeInitials": "SJ",
+      "category": "travel",
+      "amount": 4999,
+      "currency": "INR",
+      "description": "Company Visit",
+      "date": "2026-06-25",
+      "isMileage": false,
+      "mileageKm": null,
+      "mileageFrom": null,
+      "mileageTo": null,
+      "ratePerKm": null,
+      "isTaxable": false,
+      "status": "pending-approval",
+      "policyValid": true,
+      "policyMessage": null,
+      "receiptUrls": [],
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "exp-001",
+      "employeeId": "emp-001",
+      "employeeName": "Sarah Johnson",
+      "employeeInitials": "SJ",
+      "category": "travel",
+      "amount": 245.5,
+      "currency": "USD",
+      "description": "Flight to NYC for client meeting - Q2 review",
+      "date": "2026-06-10",
+      "receiptUrls": [
+        "receipt_flight.jpg"
+      ],
+      "isMileage": false,
+      "isTaxable": false,
+      "status": "approved",
+      "policyValid": true,
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "approved",
+          "date": "2026-06-12"
+        }
+      ],
+      "paidDate": "2026-06-20"
+    },
+    {
+      "id": "exp-002",
+      "employeeId": "emp-001",
+      "employeeName": "Sarah Johnson",
+      "employeeInitials": "SJ",
+      "category": "food",
+      "amount": 67.8,
+      "currency": "USD",
+      "description": "Team lunch - sprint planning session",
+      "date": "2026-06-18",
+      "receiptUrls": [
+        "receipt_lunch.jpg"
+      ],
+      "isMileage": false,
+      "isTaxable": false,
+      "status": "pending-approval",
+      "policyValid": true,
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "exp-003",
+      "employeeId": "emp-001",
+      "employeeName": "Sarah Johnson",
+      "employeeInitials": "SJ",
+      "category": "travel",
+      "amount": 34.2,
+      "currency": "USD",
+      "description": "Mileage - office to client site",
+      "date": "2026-06-20",
+      "receiptUrls": [],
+      "isMileage": true,
+      "mileageKm": 38,
+      "mileageFrom": "SF Office",
+      "mileageTo": "Palo Alto Client",
+      "ratePerKm": 0.9,
+      "isTaxable": false,
+      "status": "pending-approval",
+      "policyValid": true,
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "exp-004",
+      "employeeId": "emp-005",
+      "employeeName": "Vikram Nair",
+      "employeeInitials": "VN",
+      "category": "accommodation",
+      "amount": 180,
+      "currency": "USD",
+      "description": "Hotel for Bangalore conference",
+      "date": "2026-06-15",
+      "receiptUrls": [
+        "hotel_receipt.pdf"
+      ],
+      "isMileage": false,
+      "isTaxable": false,
+      "status": "pending-approval",
+      "policyValid": true,
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "exp-005",
+      "employeeId": "emp-001",
+      "employeeName": "Sarah Johnson",
+      "employeeInitials": "SJ",
+      "category": "office-supplies",
+      "amount": 125,
+      "currency": "USD",
+      "description": "Mechanical keyboard for home office",
+      "date": "2026-05-28",
+      "receiptUrls": [
+        "keyboard_receipt.jpg"
+      ],
+      "isMileage": false,
+      "isTaxable": false,
+      "status": "rejected",
+      "policyValid": false,
+      "policyMessage": "Exceeds ₹5000 home office limit for FY2026",
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "rejected",
+          "date": "2026-05-30",
+          "comment": "Policy limit exceeded for this FY"
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal-001",
+      "employeeId": "emp-001",
+      "title": "Improve API Response Time",
+      "description": "Reduce average API response time from 450ms to under 200ms across all endpoints",
+      "category": "individual",
+      "type": "quarterly",
+      "weight": 30,
+      "dueDate": "2026-06-30",
+      "status": "in-progress",
+      "progress": 99,
+      "keyResults": "[{\"id\":\"kr-1\",\"title\":\"Profile and identify top 10 slow endpoints\",\"target\":10,\"current\":10,\"unit\":\"endpoints\",\"completed\":true},{\"id\":\"kr-2\",\"title\":\"Implement caching layer for DB queries\",\"target\":1,\"current\":1,\"unit\":\"system\",\"completed\":true},{\"id\":\"kr-3\",\"title\":\"Reduce avg response time to <200ms\",\"target\":200,\"current\":198,\"unit\":\"ms\",\"completed\":false}]"
+    },
+    {
+      "id": "goal-002",
+      "employeeId": "emp-001",
+      "title": "Complete Security Certification",
+      "description": "Obtain AWS Security Specialty certification by Q2 end",
+      "category": "individual",
+      "type": "quarterly",
+      "weight": 20,
+      "dueDate": "2026-06-30",
+      "status": "in-progress",
+      "progress": 67,
+      "keyResults": "[{\"id\":\"kr-4\",\"title\":\"Complete online course modules\",\"target\":12,\"current\":9,\"unit\":\"modules\",\"completed\":false},{\"id\":\"kr-5\",\"title\":\"Pass practice exams with >80%\",\"target\":3,\"current\":1,\"unit\":\"exams\",\"completed\":false}]"
+    },
+    {
+      "id": "goal-003",
+      "employeeId": "emp-001",
+      "title": "Mentor 2 Junior Developers",
+      "description": "Provide weekly 1:1 coaching sessions to 2 junior team members",
+      "category": "team",
+      "type": "quarterly",
+      "weight": 25,
+      "dueDate": "2026-06-30",
+      "status": "on-track",
+      "progress": 80,
+      "keyResults": [
+        {
+          "id": "kr-6",
+          "title": "Weekly 1:1 sessions conducted",
+          "target": 24,
+          "current": 19,
+          "unit": "sessions",
+          "completed": false
+        },
+        {
+          "id": "kr-7",
+          "title": "Junior dev satisfaction score",
+          "target": 4.5,
+          "current": 4.7,
+          "unit": "rating",
+          "completed": true
+        }
+      ]
+    },
+    {
+      "id": "goal-004",
+      "employeeId": "emp-001",
+      "title": "Code Review Coverage",
+      "description": "Increase code review participation to 90% of PRs",
+      "category": "team",
+      "type": "quarterly",
+      "weight": 25,
+      "dueDate": "2026-06-30",
+      "status": "at-risk",
+      "progress": 55,
+      "keyResults": [
+        {
+          "id": "kr-8",
+          "title": "Review PRs submitted",
+          "target": 60,
+          "current": 33,
+          "unit": "PRs",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "goal-1782320346218",
+      "employeeId": "emp-001",
+      "title": "improve API performance",
+      "description": "change LLM",
+      "category": "individual",
+      "type": "quarterly",
+      "weight": 25,
+      "dueDate": "2026-06-27",
+      "status": "in-progress",
+      "progress": 10,
+      "keyResults": "[{\"id\":\"kr-1782320346131-0\",\"title\":\"increament\",\"target\":10,\"current\":1,\"unit\":\"%\",\"completed\":false}]"
+    }
+  ],
+  "performanceReviews": [
+    {
+      "id": "rev-001",
+      "employeeId": "emp-001",
+      "reviewType": "quarterly",
+      "period": "Q1 2026",
+      "overallRating": 4.2,
+      "maxRating": 5,
+      "categoryRatings": [
+        {
+          "category": "Technical Skills",
+          "rating": 4.5,
+          "maxRating": 5
+        },
+        {
+          "category": "Collaboration",
+          "rating": 4,
+          "maxRating": 5
+        },
+        {
+          "category": "Delivery",
+          "rating": 4.2,
+          "maxRating": 5
+        },
+        {
+          "category": "Innovation",
+          "rating": 4,
+          "maxRating": 5
+        }
+      ],
+      "strengths": [
+        "Excellent debugging skills",
+        "Strong documentation habits",
+        "Proactive in identifying risks"
+      ],
+      "areasOfImprovement": [
+        "Public speaking in large meetings",
+        "Cross-team collaboration"
+      ],
+      "goalsAchieved": 3,
+      "totalGoals": 4,
+      "recommendations": "Ready for senior track promotion in Q3. Consider tech lead responsibilities.",
+      "reviewDate": "2026-04-05",
+      "reviewerName": "Michael Chen"
+    }
+  ],
+  "feedback": [
+    {
+      "id": "fb-001",
+      "fromEmployee": "emp-002",
+      "toEmployee": "emp-001",
+      "type": "manager",
+      "message": "Sarah consistently delivers high-quality code and proactively communicates blockers. Keep up the excellent mentorship!",
+      "rating": 4.5,
+      "date": "2026-06-15"
+    },
+    {
+      "id": "fb-002",
+      "fromEmployee": "emp-005",
+      "toEmployee": "emp-001",
+      "type": "peer",
+      "message": "Great team player. Always willing to help with code reviews even during crunch time.",
+      "rating": 4,
+      "date": "2026-06-10"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "cnt-1782364502355",
+      "employeeId": "emp-001",
+      "employeeName": "Sarah Johnson",
+      "employeeInitials": "SJ",
+      "title": "test contribute",
+      "description": "test",
+      "type": "self-initiated",
+      "category": "innovation",
+      "suggestedPoints": 100,
+      "finalPoints": null,
+      "impactLevel": "medium",
+      "tags": [
+        "devops"
+      ],
+      "status": "under-review",
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "pending"
+        }
+      ],
+      "createdDate": "2026-06-25"
+    },
+    {
+      "id": "cn-001",
+      "employeeId": "emp-001",
+      "employeeName": "Sarah Johnson",
+      "employeeInitials": "SJ",
+      "title": "Automated Deployment Pipeline",
+      "description": "Built CI/CD pipeline reducing deployment time from 45 mins to 8 mins, saving 150+ engineering hours/month",
+      "type": "self-initiated",
+      "category": "process-improvement",
+      "suggestedPoints": 500,
+      "finalPoints": 500,
+      "impactLevel": "high",
+      "evidence": [
+        "deployment_metrics.pdf",
+        "pipeline_diagram.png"
+      ],
+      "tags": [
+        "DevOps",
+        "Automation",
+        "Efficiency"
+      ],
+      "status": "completed",
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "approved",
+          "date": "2026-06-01"
+        }
+      ],
+      "createdDate": "2026-05-15"
+    },
+    {
+      "id": "cn-002",
+      "employeeId": "emp-001",
+      "employeeName": "Sarah Johnson",
+      "employeeInitials": "SJ",
+      "title": "GraphQL API Migration",
+      "description": "Led migration of 3 REST services to GraphQL, reducing over-fetching by 60%",
+      "type": "committed",
+      "category": "innovation",
+      "suggestedPoints": 350,
+      "finalPoints": null,
+      "impactLevel": "medium",
+      "tags": [
+        "GraphQL",
+        "API",
+        "Performance"
+      ],
+      "status": "under-review",
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "pending"
+        }
+      ],
+      "createdDate": "2026-06-10"
+    },
+    {
+      "id": "cn-003",
+      "employeeId": "emp-005",
+      "employeeName": "Vikram Nair",
+      "employeeInitials": "VN",
+      "title": "Accessibility Audit & Fixes",
+      "description": "Conducted full WCAG 2.1 audit and fixed 47 accessibility issues",
+      "type": "self-initiated",
+      "category": "quality",
+      "suggestedPoints": 280,
+      "finalPoints": 280,
+      "impactLevel": "medium",
+      "tags": [
+        "Accessibility",
+        "WCAG",
+        "Frontend"
+      ],
+      "status": "completed",
+      "approvalFlow": [
+        {
+          "approver": "Michael Chen",
+          "role": "Manager",
+          "status": "approved",
+          "date": "2026-06-05"
+        }
+      ],
+      "createdDate": "2026-05-20"
+    }
+  ],
+  "contributionItems": [
+    {
+      "id": "ci-001",
+      "title": "Write Technical Blog Post",
+      "description": "Write an engineering blog post for the company tech blog about a recent challenge you solved",
+      "category": "innovation",
+      "suggestedPoints": 100,
+      "isAvailable": true,
+      "impactLevel": "low"
+    },
+    {
+      "id": "ci-002",
+      "title": "Conduct Knowledge Transfer Session",
+      "description": "Host a 1-hour knowledge transfer session for the team on any relevant topic",
+      "category": "team-building",
+      "suggestedPoints": 150,
+      "isAvailable": true,
+      "impactLevel": "medium"
+    },
+    {
+      "id": "ci-003",
+      "title": "Open Source Contribution",
+      "description": "Make a meaningful contribution to a relevant open-source project",
+      "category": "innovation",
+      "suggestedPoints": 200,
+      "isAvailable": true,
+      "impactLevel": "medium"
+    },
+    {
+      "id": "ci-004",
+      "title": "Cost Optimization Initiative",
+      "description": "Identify and implement a cost-saving measure for infrastructure or tooling",
+      "category": "cost-saving",
+      "suggestedPoints": 400,
+      "isAvailable": true,
+      "impactLevel": "high"
+    }
+  ],
+  "contributionLeaderboard": [
+    {
+      "employeeId": "emp-001",
+      "employeeName": "Sarah Johnson",
+      "employeeInitials": "SJ",
+      "department": "Engineering",
+      "totalPoints": 1250,
+      "rank": 1,
+      "badges": [
+        "🏆 Top Contributor",
+        "🚀 Innovator",
+        "🤝 Team Player"
+      ],
+      "averageRating": 4.6,
+      "color": "#0d9488"
+    },
+    {
+      "employeeId": "emp-005",
+      "employeeName": "Vikram Nair",
+      "employeeInitials": "VN",
+      "department": "Engineering",
+      "totalPoints": 980,
+      "rank": 2,
+      "badges": [
+        "⭐ Rising Star",
+        "✅ Quality Champion"
+      ],
+      "averageRating": 4.3,
+      "color": "#ec4899"
+    },
+    {
+      "employeeId": "emp-006",
+      "employeeName": "Lisa Park",
+      "employeeInitials": "LP",
+      "department": "Design",
+      "totalPoints": 820,
+      "rank": 3,
+      "badges": [
+        "🎨 Creative Champion"
+      ],
+      "averageRating": 4.4,
+      "color": "#16a34a"
+    },
+    {
+      "employeeId": "emp-003",
+      "employeeName": "Priya Sharma",
+      "employeeInitials": "PS",
+      "department": "HR",
+      "totalPoints": 650,
+      "rank": 4,
+      "badges": [
+        "💡 Problem Solver"
+      ],
+      "averageRating": 4.1,
+      "color": "#f97316"
+    }
+  ],
+  "trainingModules": [
+    {
+      "id": "tr-001",
+      "title": "Information Security Fundamentals",
+      "description": "Mandatory annual security training covering data protection, phishing awareness, and incident response",
+      "category": "compliance",
+      "durationMinutes": 90,
+      "dueDate": "2026-06-30",
+      "isMandatory": true,
+      "isCertificateEligible": true,
+      "progress": 60,
+      "status": "in-progress",
+      "contents": [
+        {
+          "id": "c1",
+          "title": "Introduction to Cybersecurity",
+          "type": "video",
+          "duration": 15,
+          "completed": true
+        },
+        {
+          "id": "c2",
+          "title": "Phishing & Social Engineering",
+          "type": "video",
+          "duration": 20,
+          "completed": true
+        },
+        {
+          "id": "c3",
+          "title": "Data Classification",
+          "type": "document",
+          "duration": 10,
+          "completed": false
+        },
+        {
+          "id": "c4",
+          "title": "Incident Response",
+          "type": "video",
+          "duration": 25,
+          "completed": false
+        },
+        {
+          "id": "c5",
+          "title": "Security Assessment Quiz",
+          "type": "quiz",
+          "duration": 20,
+          "completed": true
+        }
+      ]
+    },
+    {
+      "id": "tr-002",
+      "title": "Diversity, Equity & Inclusion",
+      "description": "Building an inclusive workplace - understanding bias, allyship, and creating equitable environments",
+      "category": "compliance",
+      "durationMinutes": 60,
+      "dueDate": "2026-07-15",
+      "isMandatory": true,
+      "isCertificateEligible": true,
+      "progress": 0,
+      "status": "not-started",
+      "contents": [
+        {
+          "id": "c6",
+          "title": "Understanding Unconscious Bias",
+          "type": "video",
+          "duration": 20,
+          "completed": false
+        },
+        {
+          "id": "c7",
+          "title": "Allyship in Practice",
+          "type": "interactive",
+          "duration": 25,
+          "completed": false
+        },
+        {
+          "id": "c8",
+          "title": "DEI Assessment",
+          "type": "quiz",
+          "duration": 15,
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "tr-003",
+      "title": "Advanced React Patterns",
+      "description": "Deep dive into advanced React patterns including compound components, render props, and custom hooks",
+      "category": "technical",
+      "durationMinutes": 180,
+      "dueDate": "2026-08-01",
+      "isMandatory": false,
+      "isCertificateEligible": true,
+      "progress": 100,
+      "status": "completed",
+      "certificateId": "cert-1782321145488",
+      "contents": [
+        {
+          "id": "c9",
+          "title": "Compound Components",
+          "type": "video",
+          "duration": 45,
+          "completed": true
+        },
+        {
+          "id": "c10",
+          "title": "Custom Hooks Deep Dive",
+          "type": "video",
+          "duration": 60,
+          "completed": true
+        },
+        {
+          "id": "c11",
+          "title": "State Machines with XState",
+          "type": "video",
+          "duration": 45,
+          "completed": true
+        },
+        {
+          "id": "c12",
+          "title": "Final Project",
+          "type": "interactive",
+          "duration": 30,
+          "completed": true
+        }
+      ]
+    },
+    {
+      "id": "tr-004",
+      "title": "GDPR & Privacy Compliance",
+      "description": "Understanding GDPR requirements, data subject rights, and privacy-by-design principles",
+      "category": "compliance",
+      "durationMinutes": 45,
+      "dueDate": "2026-09-30",
+      "isMandatory": true,
+      "isCertificateEligible": true,
+      "progress": 100,
+      "status": "completed",
+      "certificateId": "cert-1782359778789",
+      "contents": [
+        {
+          "id": "c13",
+          "title": "GDPR Overview",
+          "type": "video",
+          "duration": 20,
+          "completed": true
+        },
+        {
+          "id": "c14",
+          "title": "Data Subject Rights",
+          "type": "document",
+          "duration": 10,
+          "completed": true
+        },
+        {
+          "id": "c15",
+          "title": "GDPR Quiz",
+          "type": "quiz",
+          "duration": 15,
+          "completed": true
+        }
+      ]
+    }
+  ],
+  "jobPostings": [
+    {
+      "id": "job-001",
+      "title": "Senior Backend Engineer",
+      "department": "Engineering",
+      "location": "San Francisco, CA / Remote",
+      "employmentType": "full-time",
+      "experienceMin": 4,
+      "experienceMax": 8,
+      "salaryMin": 130000,
+      "salaryMax": 170000,
+      "currency": "USD",
+      "requirements": [
+        "Node.js",
+        "PostgreSQL",
+        "AWS",
+        "Microservices"
+      ],
+      "responsibilities": [
+        "Design and build scalable APIs",
+        "Lead technical architecture decisions",
+        "Code review and mentorship"
+      ],
+      "status": "active",
+      "applicantsCount": 23,
+      "shortlistedCount": 6,
+      "interviewingCount": 3,
+      "postedDate": "2026-06-01"
+    },
+    {
+      "id": "job-002",
+      "title": "Product Manager",
+      "department": "Product",
+      "location": "New York, NY",
+      "employmentType": "full-time",
+      "experienceMin": 3,
+      "experienceMax": 7,
+      "salaryMin": 110000,
+      "salaryMax": 140000,
+      "currency": "USD",
+      "requirements": [
+        "Product roadmap",
+        "Agile",
+        "Data analysis",
+        "Stakeholder management"
+      ],
+      "responsibilities": [
+        "Define product vision",
+        "Collaborate with engineering and design",
+        "Drive feature launches"
+      ],
+      "status": "active",
+      "applicantsCount": 41,
+      "shortlistedCount": 8,
+      "interviewingCount": 2,
+      "postedDate": "2026-06-05"
+    },
+    {
+      "id": "job-003",
+      "title": "UX Designer",
+      "department": "Design",
+      "location": "Austin, TX / Remote",
+      "employmentType": "full-time",
+      "experienceMin": 2,
+      "experienceMax": 5,
+      "salaryMin": 90000,
+      "salaryMax": 120000,
+      "currency": "USD",
+      "requirements": [
+        "Figma",
+        "User Research",
+        "Prototyping",
+        "Design Systems"
+      ],
+      "responsibilities": [
+        "Create wireframes and high-fidelity designs",
+        "Conduct user research",
+        "Maintain design system"
+      ],
+      "status": "paused",
+      "applicantsCount": 18,
+      "shortlistedCount": 4,
+      "interviewingCount": 0,
+      "postedDate": "2026-05-20"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "cand-001",
+      "jobPostingId": "job-001",
+      "name": "Arjun Mehta",
+      "email": "arjun.mehta@email.com",
+      "phone": "+91 99887-76655",
+      "initials": "AM",
+      "appliedRole": "Senior Backend Engineer",
+      "skills": [
+        "Node.js",
+        "Python",
+        "AWS",
+        "MongoDB"
+      ],
+      "experienceYears": 6,
+      "expectedSalary": 145000,
+      "currency": "USD",
+      "noticePeriodDays": 30,
+      "rating": 4.5,
+      "notes": "Strong system design skills, excellent communication. Referred by Sarah.",
+      "status": "rejected",
+      "appliedDate": "2026-06-03",
+      "interviewDate": "2026-06-25",
+      "color": "#0d9488"
+    },
+    {
+      "id": "cand-002",
+      "jobPostingId": "job-001",
+      "name": "Emma Thompson",
+      "email": "emma.t@email.com",
+      "phone": "+1 415-888-9999",
+      "initials": "ET",
+      "appliedRole": "Senior Backend Engineer",
+      "skills": [
+        "Go",
+        "Kubernetes",
+        "PostgreSQL",
+        "Redis"
+      ],
+      "experienceYears": 7,
+      "expectedSalary": 160000,
+      "currency": "USD",
+      "noticePeriodDays": 14,
+      "rating": 4.2,
+      "notes": "Impressive background in distributed systems. Currently at Stripe.",
+      "status": "interview-scheduled",
+      "appliedDate": "2026-06-05",
+      "color": "#6366f1"
+    },
+    {
+      "id": "cand-003",
+      "jobPostingId": "job-001",
+      "name": "Ravi Kumar",
+      "email": "ravi.k@email.com",
+      "phone": "+91 88776-55443",
+      "initials": "RK",
+      "appliedRole": "Senior Backend Engineer",
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "Kafka",
+        "AWS"
+      ],
+      "experienceYears": 5,
+      "expectedSalary": 130000,
+      "currency": "USD",
+      "noticePeriodDays": 60,
+      "rating": 3.8,
+      "notes": "Good Java background but limited cloud experience.",
+      "status": "screening",
+      "appliedDate": "2026-06-08",
+      "color": "#f97316"
+    },
+    {
+      "id": "cand-004",
+      "jobPostingId": "job-001",
+      "name": "Priya Iyer",
+      "email": "priya.i@email.com",
+      "phone": "+1 650-777-8888",
+      "initials": "PI",
+      "appliedRole": "Senior Backend Engineer",
+      "skills": [
+        "Node.js",
+        "TypeScript",
+        "GraphQL",
+        "PostgreSQL"
+      ],
+      "experienceYears": 4,
+      "expectedSalary": 135000,
+      "currency": "USD",
+      "noticePeriodDays": 21,
+      "rating": 4.7,
+      "notes": "Exceptional TypeScript skills, great culture fit. Top candidate.",
+      "status": "interviewed",
+      "appliedDate": "2026-06-02",
+      "interviewDate": "2026-06-20",
+      "color": "#ec4899"
+    },
+    {
+      "id": "cand-005",
+      "jobPostingId": "job-002",
+      "name": "James Wilson",
+      "email": "james.w@email.com",
+      "phone": "+1 212-333-4444",
+      "initials": "JW",
+      "appliedRole": "Product Manager",
+      "skills": [
+        "Roadmapping",
+        "SQL",
+        "Figma",
+        "Jira"
+      ],
+      "experienceYears": 5,
+      "expectedSalary": 125000,
+      "currency": "USD",
+      "noticePeriodDays": 30,
+      "rating": 4,
+      "notes": "Strong product sense. Previously at Atlassian.",
+      "status": "screening",
+      "appliedDate": "2026-06-10",
+      "color": "#8b5cf6"
+    },
+    {
+      "id": "cand-006",
+      "jobPostingId": "job-001",
+      "name": "Sofia Martinez",
+      "email": "sofia.m@email.com",
+      "phone": "+1 305-555-7777",
+      "initials": "SM",
+      "appliedRole": "Senior Backend Engineer",
+      "skills": [
+        "Python",
+        "Django",
+        "AWS",
+        "Docker"
+      ],
+      "experienceYears": 8,
+      "expectedSalary": 165000,
+      "currency": "USD",
+      "noticePeriodDays": 0,
+      "rating": 4.8,
+      "notes": "Excellent candidate. Offer extended pending background check.",
+      "status": "offer-extended",
+      "appliedDate": "2026-05-28",
+      "color": "#16a34a"
+    }
+  ],
+  "recognitions": [
+    {
+      "id": "rec-1782320783828",
+      "fromEmployeeId": "emp-001",
+      "fromEmployeeName": "Sarah Johnson",
+      "fromEmployeeInitials": "SJ",
+      "fromColor": "#0d9488",
+      "toEmployeeId": "emp-003",
+      "toEmployeeName": "Priya Sharma",
+      "toEmployeeInitials": "PS",
+      "toColor": "#f97316",
+      "message": "Very Supporting in onboarding env",
+      "category": "excellence",
+      "likesCount": 0,
+      "likedBy": [],
+      "commentsCount": 0,
+      "comments": [],
+      "date": "2026-06-24"
+    },
+    {
+      "id": "rec-001",
+      "fromEmployeeId": "emp-002",
+      "fromEmployeeName": "Michael Chen",
+      "fromEmployeeInitials": "MC",
+      "toEmployeeId": "emp-001",
+      "toEmployeeName": "Sarah Johnson",
+      "toEmployeeInitials": "SJ",
+      "category": "excellence",
+      "message": "🌟 Sarah absolutely crushed the API performance challenge this sprint! Reduced response times by 37% — a massive win for our users. Your dedication to quality is truly inspiring. The team is so lucky to have you! 🚀",
+      "isPublic": true,
+      "likesCount": 12,
+      "commentsCount": 3,
+      "date": "2026-06-22",
+      "liked": false,
+      "fromColor": "#8b5cf6",
+      "toColor": "#0d9488"
+    },
+    {
+      "id": "rec-002",
+      "fromEmployeeId": "emp-006",
+      "fromEmployeeName": "Lisa Park",
+      "fromEmployeeInitials": "LP",
+      "toEmployeeId": "emp-005",
+      "toEmployeeName": "Vikram Nair",
+      "toEmployeeInitials": "VN",
+      "category": "team-player",
+      "message": "Vikram went out of his way to help me debug a complex CSS animation issue at 6pm. Stayed back without being asked. This is what great teamwork looks like! Thank you Vikram 🙏",
+      "isPublic": true,
+      "likesCount": 8,
+      "commentsCount": 2,
+      "date": "2026-06-21",
+      "liked": false,
+      "fromColor": "#16a34a",
+      "toColor": "#ec4899"
+    },
+    {
+      "id": "rec-003",
+      "fromEmployeeId": "emp-001",
+      "fromEmployeeName": "Sarah Johnson",
+      "fromEmployeeInitials": "SJ",
+      "toEmployeeId": "emp-002",
+      "toEmployeeName": "Michael Chen",
+      "toEmployeeInitials": "MC",
+      "category": "leadership",
+      "message": "Michael's leadership during the infrastructure migration was exceptional. Clear communication, quick decisions, and always keeping the team calm under pressure. Best manager I've had! 💪",
+      "isPublic": true,
+      "likesCount": 15,
+      "commentsCount": 4,
+      "date": "2026-06-19",
+      "liked": true,
+      "fromColor": "#0d9488",
+      "toColor": "#8b5cf6"
+    },
+    {
+      "id": "rec-004",
+      "fromEmployeeId": "emp-003",
+      "fromEmployeeName": "Priya Sharma",
+      "fromEmployeeInitials": "PS",
+      "toEmployeeId": "emp-006",
+      "toEmployeeName": "Lisa Park",
+      "toEmployeeInitials": "LP",
+      "category": "innovation",
+      "message": "Lisa redesigned the onboarding flow and reduced drop-off by 42%! Her user research was thorough and the designs are absolutely stunning. Innovation at its finest! ✨",
+      "isPublic": true,
+      "likesCount": 11,
+      "commentsCount": 5,
+      "date": "2026-06-18",
+      "liked": false,
+      "fromColor": "#f97316",
+      "toColor": "#16a34a"
+    }
+  ],
+  "announcements": [
+    {
+      "id": "ann-1782359437992",
+      "title": "Company Town Hall — August 12th",
+      "content": "Rahul Verma (Operations) · 30 July 2026\n\nYou're invited to our Company Town Hall on August 12th at 4:00 PM IST / 6:30 AM EST. During the session, we'll review key business achievements from the past quarter, share strategic priorities for the months ahead, introduce new team initiatives, and recognize outstanding employee contributions. A live Q&A session will follow the presentation. Attendance is required for all employees. Meeting details and access links will be distributed via email 48 hours before the event.",
+      "priority": "medium",
+      "category": "celebration",
+      "authorName": "HR Admin",
+      "authorRole": "HR",
+      "publishedDate": "2026-06-25T03:50:37.992Z",
+      "views": 0,
+      "likes": 1,
+      "likedBy": [
+        "emp-001"
+      ],
+      "acknowledgedBy": [],
+      "requiresAcknowledgment": false,
+      "acknowledged": false
+    },
+    {
+      "id": "ann-001",
+      "title": "🎉 Q2 All-Hands Meeting — July 5th",
+      "content": "Join us for our Q2 All-Hands on July 5th at 3:00 PM IST / 5:30 AM EST. We'll cover Q2 performance highlights, product roadmap for Q3, upcoming engineering initiatives, and a special surprise announcement. Attendance is mandatory for all team members. Zoom link will be shared 24 hours prior via calendar invite.",
+      "category": "event",
+      "priority": "high",
+      "visibilityScope": "global",
+      "publishedDate": "2026-06-22",
+      "publishedBy": "Priya Sharma (HR)",
+      "views": 248,
+      "likes": 67,
+      "acknowledgments": 0,
+      "comments": 12,
+      "requiresAcknowledgment": false,
+      "acknowledged": false,
+      "expiryDate": null,
+      "attachments": [],
+      "likedBy": []
+    },
+    {
+      "id": "ann-002",
+      "title": "📋 Updated Work From Home Policy — Effective July 1",
+      "content": "Effective July 1, 2026, the WFH policy is updated to allow up to 3 days per week for all eligible roles (Grade 3 and above). Employees must maintain minimum 40% in-office attendance per month. Please acknowledge this policy update before June 30th. New WFH request process: Submit via WorkFlow → Leave Management → WFH Request. Questions? Contact HR at hr@workflow.com.",
+      "category": "policy",
+      "priority": "critical",
+      "visibilityScope": "global",
+      "publishedDate": "2026-06-20",
+      "publishedBy": "David Williams (Admin)",
+      "views": 312,
+      "likes": 89,
+      "acknowledgments": 156,
+      "comments": 28,
+      "requiresAcknowledgment": true,
+      "acknowledged": true,
+      "expiryDate": "2026-06-30",
+      "attachments": [
+        "wfh_policy_v3.pdf"
+      ],
+      "acknowledgedBy": [
+        "emp-001"
+      ]
+    },
+    {
+      "id": "ann-003",
+      "title": "🏆 Engineering Team — Quarterly Awards!",
+      "content": "Congratulations to our Q2 winners! 🥇 Most Innovative: Sarah Johnson for the API performance optimization initiative. 🥈 Team Player of the Quarter: Vikram Nair for exceptional cross-team collaboration. 🥉 Rising Star: Lisa Park for transforming our design system. Awards ceremony will be held during the Q2 All-Hands. Gift vouchers will be distributed by July 10th.",
+      "category": "celebration",
+      "priority": "medium",
+      "visibilityScope": "global",
+      "publishedDate": "2026-06-20",
+      "publishedBy": "Priya Sharma (HR)",
+      "views": 189,
+      "likes": 94,
+      "acknowledgments": 0,
+      "comments": 31,
+      "requiresAcknowledgment": false,
+      "acknowledged": false,
+      "expiryDate": null,
+      "attachments": []
+    },
+    {
+      "id": "ann-004",
+      "title": "🔧 System Maintenance — June 28, 2:00–4:00 AM IST",
+      "content": "WorkFlow platform will be undergoing scheduled maintenance on June 28th from 2:00 AM to 4:00 AM IST (June 27, 8:30 PM to 10:30 PM UTC). During this window, attendance clock-in/out, leave applications, and payslip downloads will be unavailable. Please plan accordingly and clock out before 1:55 AM IST if you're on a night shift.",
+      "category": "compliance",
+      "priority": "medium",
+      "visibilityScope": "global",
+      "publishedDate": "2026-06-19",
+      "publishedBy": "David Williams (Admin)",
+      "views": 201,
+      "likes": 18,
+      "acknowledgments": 0,
+      "comments": 5,
+      "requiresAcknowledgment": false,
+      "acknowledged": false,
+      "expiryDate": "2026-06-28",
+      "attachments": []
+    },
+    {
+      "id": "ann-005",
+      "title": "💡 New Learning Path: Cloud Architecture",
+      "content": "We've partnered with A Cloud Guru to provide free access to the Cloud Architecture learning path for all Engineering and DevOps team members. Complete the path by August 31st to receive AWS Solutions Architect certification vouchers. Access via Training → Learning Paths → Cloud Architecture. Limited seats available — first come, first served!",
+      "category": "hr-update",
+      "priority": "low",
+      "visibilityScope": "department",
+      "targetDepartments": [
+        "Engineering",
+        "DevOps"
+      ],
+      "publishedDate": "2026-06-18",
+      "publishedBy": "Priya Sharma (HR)",
+      "views": 87,
+      "likes": 43,
+      "acknowledgments": 0,
+      "comments": 8,
+      "requiresAcknowledgment": false,
+      "acknowledged": false,
+      "expiryDate": null,
+      "attachments": []
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-001",
+      "type": "leave-approval",
+      "message": "Vikram Nair submitted a leave request for Jul 1–2",
+      "timestamp": "2026-06-23T14:30:00Z",
+      "read": true,
+      "href": "/leave",
+      "icon": "calendar",
+      "forRoles": [
+        "Manager",
+        "HR",
+        "Admin"
+      ]
+    },
+    {
+      "id": "notif-002",
+      "type": "leave-approval",
+      "message": "Lisa Park submitted a leave request for Jul 5",
+      "timestamp": "2026-06-23T11:15:00Z",
+      "read": true,
+      "href": "/leave",
+      "icon": "calendar",
+      "forRoles": [
+        "Manager",
+        "HR",
+        "Admin"
+      ]
+    },
+    {
+      "id": "notif-003",
+      "type": "expense-approval",
+      "message": "Sarah Johnson submitted a ₹67.80 expense claim",
+      "timestamp": "2026-06-23T09:45:00Z",
+      "read": false,
+      "href": "/expenses",
+      "icon": "dollar",
+      "forRoles": [
+        "Manager",
+        "HR",
+        "Admin"
+      ]
+    },
+    {
+      "id": "notif-004",
+      "type": "announcement",
+      "message": "New announcement: Updated WFH Policy — action required",
+      "timestamp": "2026-06-22T16:00:00Z",
+      "read": false,
+      "href": "/announcements",
+      "icon": "bell",
+      "forRoles": [
+        "Employee",
+        "Manager",
+        "HR",
+        "Admin"
+      ]
+    },
+    {
+      "id": "notif-005",
+      "type": "recognition",
+      "message": "Michael Chen recognized you for Excellence!",
+      "timestamp": "2026-06-22T14:30:00Z",
+      "read": false,
+      "href": "/recognition",
+      "icon": "star",
+      "forRoles": [
+        "Employee"
+      ]
+    },
+    {
+      "id": "notif-006",
+      "type": "training",
+      "message": "Information Security training due in 6 days",
+      "timestamp": "2026-06-22T09:00:00Z",
+      "read": true,
+      "href": "/training",
+      "icon": "book",
+      "forRoles": [
+        "Employee",
+        "Manager"
+      ]
+    },
+    {
+      "id": "notif-007",
+      "type": "payroll",
+      "message": "June 2026 payslip is now available",
+      "timestamp": "2026-06-21T12:00:00Z",
+      "read": true,
+      "href": "/payroll",
+      "icon": "dollar",
+      "forRoles": [
+        "Employee",
+        "Manager",
+        "HR",
+        "Admin"
+      ]
+    },
+    {
+      "id": "notif-008",
+      "type": "recruitment",
+      "message": "Arjun Mehta interview scheduled for June 25",
+      "timestamp": "2026-06-21T10:00:00Z",
+      "read": false,
+      "href": "/recruitment",
+      "icon": "users",
+      "forRoles": [
+        "HR",
+        "Admin"
+      ]
+    },
+    {
+      "id": "notif-009",
+      "type": "contribution",
+      "message": "Your GraphQL Migration contribution is under review",
+      "timestamp": "2026-06-20T15:00:00Z",
+      "read": true,
+      "href": "/contributions",
+      "icon": "award",
+      "forRoles": [
+        "Employee"
+      ]
+    },
+    {
+      "id": "notif-010",
+      "type": "leave-status",
+      "message": "Your June 20 casual leave request was approved ✅",
+      "timestamp": "2026-06-18T11:00:00Z",
+      "read": true,
+      "href": "/leave",
+      "icon": "check",
+      "forRoles": [
+        "Employee"
+      ]
+    }
+  ],
+  "onboardingData": {
+    "employeeId": "emp-007",
+    "name": "Alex Rivera",
+    "designation": "Junior Software Engineer",
+    "department": "Engineering",
+    "manager": "Michael Chen",
+    "buddy": "Sarah Johnson",
+    "joiningDate": "2026-06-24",
+    "progressPercent": 35,
+    "isComplete": false,
+    "tasks": [
+      {
+        "id": "ob-001",
+        "title": "Submit personal documents (Passport, SSN, Address Proof)",
+        "description": "Upload all required identity and employment documents via the Documents section",
+        "phase": "pre-joining",
+        "priority": "high",
+        "dueDate": "2026-06-23",
+        "assignee": "Alex Rivera",
+        "status": "completed",
+        "completedDate": "2026-06-22"
+      },
+      {
+        "id": "ob-002",
+        "title": "Sign Employee Agreement & NDA",
+        "description": "Review and e-sign all employment documents sent via DocuSign",
+        "phase": "pre-joining",
+        "priority": "high",
+        "dueDate": "2026-06-23",
+        "assignee": "Alex Rivera",
+        "status": "completed",
+        "completedDate": "2026-06-21"
+      },
+      {
+        "id": "ob-003",
+        "title": "Set up WorkFlow account & 2FA",
+        "description": "Log into WorkFlow, set your password, and enable two-factor authentication",
+        "phase": "day-1",
+        "priority": "high",
+        "dueDate": "2026-06-24",
+        "assignee": "Alex Rivera",
+        "status": "in-progress"
+      },
+      {
+        "id": "ob-004",
+        "title": "IT Equipment Setup — Laptop, Access Cards",
+        "description": "Pick up your workstation from the IT desk (Floor 3, Room 302) and complete device setup",
+        "phase": "day-1",
+        "priority": "high",
+        "dueDate": "2026-06-24",
+        "assignee": "Alex Rivera",
+        "status": "pending"
+      },
+      {
+        "id": "ob-005",
+        "title": "Meet your buddy: Sarah Johnson",
+        "description": "Schedule a 30-min intro call with Sarah to get acquainted with the team culture",
+        "phase": "day-1",
+        "priority": "medium",
+        "dueDate": "2026-06-25",
+        "assignee": "Alex Rivera",
+        "status": "pending"
+      },
+      {
+        "id": "ob-006",
+        "title": "Complete Company Policy eLearning",
+        "description": "Go through the 45-min company policies course on the Training portal",
+        "phase": "week-1",
+        "priority": "high",
+        "dueDate": "2026-06-28",
+        "assignee": "Alex Rivera",
+        "status": "pending"
+      },
+      {
+        "id": "ob-007",
+        "title": "Shadow a sprint planning session",
+        "description": "Attend the next sprint planning meeting to understand our Agile process",
+        "phase": "week-1",
+        "priority": "medium",
+        "dueDate": "2026-07-01",
+        "assignee": "Alex Rivera",
+        "status": "pending"
+      },
+      {
+        "id": "ob-008",
+        "title": "Complete Security Fundamentals training",
+        "description": "Mandatory cybersecurity training — must be done in the first week",
+        "phase": "week-1",
+        "priority": "high",
+        "dueDate": "2026-06-30",
+        "assignee": "Alex Rivera",
+        "status": "pending"
+      }
+    ],
+    "welcomeMessages": [
+      {
+        "id": "wm-001",
+        "senderName": "Michael Chen",
+        "senderRole": "Engineering Manager",
+        "message": "Welcome to the team, Alex! We're so excited to have you join us. Don't hesitate to reach out with any questions — we're all here to help you succeed. Looking forward to building great things together! 🚀",
+        "hasVideo": false,
+        "avatarInitials": "MC",
+        "color": "#8b5cf6"
+      },
+      {
+        "id": "wm-002",
+        "senderName": "Sarah Johnson",
+        "senderRole": "Senior Software Engineer (Your Buddy)",
+        "message": "Hey Alex! I'll be your onboarding buddy for the next 30 days. I've been where you are and I promise to make this transition as smooth as possible. Let's grab coffee on Day 1! ☕",
+        "hasVideo": false,
+        "avatarInitials": "SJ",
+        "color": "#0d9488"
+      },
+      {
+        "id": "wm-003",
+        "senderName": "Priya Sharma",
+        "senderRole": "HR Specialist",
+        "message": "Welcome aboard! If you ever have HR questions — benefits, policies, anything at all — my inbox is always open. Wishing you a wonderful first day at WorkFlow! 🌟",
+        "hasVideo": false,
+        "avatarInitials": "PS",
+        "color": "#f97316"
+      }
+    ],
+    "teamIntroductions": [
+      {
+        "employeeId": "emp-001",
+        "name": "Sarah Johnson",
+        "designation": "Senior Software Engineer",
+        "department": "Engineering",
+        "bio": "Full-stack engineer passionate about performance and developer experience. Loves hiking and specialty coffee.",
+        "expertise": [
+          "React",
+          "Node.js",
+          "System Design"
+        ],
+        "funFact": "Can solve a Rubik's cube in under 2 minutes!",
+        "initials": "SJ",
+        "color": "#0d9488",
+        "introductionStatus": "pending"
+      },
+      {
+        "employeeId": "emp-005",
+        "name": "Vikram Nair",
+        "designation": "Frontend Developer",
+        "department": "Engineering",
+        "bio": "UI/UX enthusiast who believes great design is invisible. Passionate about accessibility and web standards.",
+        "expertise": [
+          "React",
+          "CSS",
+          "Accessibility"
+        ],
+        "funFact": "Speaks 4 languages fluently.",
+        "initials": "VN",
+        "color": "#ec4899",
+        "introductionStatus": "pending"
+      },
+      {
+        "employeeId": "emp-006",
+        "name": "Lisa Park",
+        "designation": "Product Designer",
+        "department": "Design",
+        "bio": "Human-centered designer focused on turning complex problems into elegant solutions. Runs a pottery side business!",
+        "expertise": [
+          "Figma",
+          "UX Research",
+          "Design Systems"
+        ],
+        "funFact": "Has visited 35 countries.",
+        "initials": "LP",
+        "color": "#16a34a",
+        "introductionStatus": "done"
+      }
+    ],
+    "milestones": [
+      {
+        "id": "ms-001",
+        "title": "Day 1 Check-in with Manager",
+        "description": "30-minute welcome meeting with Michael Chen to set expectations",
+        "scheduledDate": "2026-06-24",
+        "status": "upcoming",
+        "type": "check-in"
+      },
+      {
+        "id": "ms-002",
+        "title": "End of Week 1 Review",
+        "description": "How was your first week? Share wins, blockers, and questions.",
+        "scheduledDate": "2026-06-28",
+        "status": "upcoming",
+        "type": "review"
+      },
+      {
+        "id": "ms-003",
+        "title": "30-Day Milestone",
+        "description": "Celebrate one month at WorkFlow! Review goals and progress.",
+        "scheduledDate": "2026-07-24",
+        "status": "upcoming",
+        "type": "celebration"
+      }
+    ]
+  },
+  "todos": [
+    {
+      "todoId": "todo-001",
+      "title": "Approve Leave Requests",
+      "description": "Review and approve pending leave requests for the team.",
+      "dueDate": "2026-06-27T09:00:00.000Z",
+      "isCompleted": false,
+      "userId": "emp-002",
+      "userContext": {
+        "userId": "emp-002",
+        "userName": "Michael Chen"
+      }
+    },
+    {
+      "todoId": "todo-002",
+      "title": "Submit Weekly Report",
+      "description": "Compile and submit progress report for the current sprint.",
+      "dueDate": "2026-06-26T17:00:00.000Z",
+      "isCompleted": true,
+      "userId": "emp-001",
+      "userContext": {
+        "userId": "emp-001",
+        "userName": "Sarah Johnson"
+      }
+    },
+    {
+      "todoId": "todo-003",
+      "title": "Complete Security Training",
+      "description": "Mandatory quarterly compliance training course.",
+      "dueDate": "2026-06-30T18:00:00.000Z",
+      "isCompleted": true,
+      "userId": "emp-001",
+      "userContext": {
+        "userId": "emp-001",
+        "userName": "Sarah Johnson"
+      }
+    },
+    {
+      "todoId": "todo-1782360355868",
+      "title": "Test Task for Admin",
+      "description": null,
+      "dueDate": null,
+      "isCompleted": false,
+      "userId": "emp-004",
+      "userContext": {
+        "userId": "emp-004",
+        "userName": "David Williams"
+      }
+    },
+    {
+      "todoId": "todo-1782360547084",
+      "title": "Test Task for Employee",
+      "description": null,
+      "dueDate": null,
+      "isCompleted": false,
+      "userId": "emp-001",
+      "userContext": {
+        "userId": "emp-001",
+        "userName": "Sarah Johnson"
+      }
+    },
+    {
+      "todoId": "todo-1782360698584",
+      "title": "product meeting",
+      "description": null,
+      "dueDate": null,
+      "isCompleted": true,
+      "userId": "emp-001",
+      "userContext": {
+        "userId": "emp-001",
+        "userName": "Sarah Johnson"
+      }
+    },
+    {
+      "todoId": "todo-1782360864642",
+      "title": "meeting",
+      "description": null,
+      "dueDate": null,
+      "isCompleted": false,
+      "userId": "emp-001",
+      "userContext": {
+        "userId": "emp-001",
+        "userName": "Sarah Johnson"
+      }
+    },
+    {
+      "todoId": "todo-1782364031377",
+      "title": "company meet",
+      "description": null,
+      "dueDate": null,
+      "isCompleted": false,
+      "userId": "emp-001",
+      "userContext": {
+        "userId": "emp-001",
+        "userName": "Sarah Johnson"
+      }
+    },
+    {
+      "todoId": "todo-1782365581111",
+      "title": "interview mails",
+      "description": null,
+      "dueDate": null,
+      "isCompleted": false,
+      "userId": "emp-003",
+      "userContext": {
+        "userId": "emp-003",
+        "userName": "Priya Sharma"
+      }
+    }
+  ]
+}
