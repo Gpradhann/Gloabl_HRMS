@@ -172,10 +172,24 @@ export default function AttendancePage() {
   const [activeTab, setActiveTab] = useState<'today' | 'history' | 'shift'>('today');
 
   const { records, clockIn, clockOut } = useAttendance('emp-001');
+  const { localAttendance, addLocalAttendance } = useHrmsStore();
 
   const todayStr = new Date().toISOString().split('T')[0];
-  const todayRecord = records?.find(r => r.date === todayStr);
+
+  // Merge server records with client local storage overrides
+  const mergedRecords = [...records];
+  localAttendance.forEach((localRec: any) => {
+    const idx = mergedRecords.findIndex(r => r.employeeId === localRec.employeeId && r.date === localRec.date);
+    if (idx !== -1) {
+      mergedRecords[idx] = { ...mergedRecords[idx], ...localRec };
+    } else {
+      mergedRecords.unshift(localRec);
+    }
+  });
+
+  const todayRecord = mergedRecords?.find(r => r.date === todayStr);
   const isClockedIn = !!(todayRecord && todayRecord.clockIn && !todayRecord.clockOut);
+
 
   useEffect(() => { setCurrentView('attendance'); }, [setCurrentView]);
 
@@ -199,7 +213,7 @@ export default function AttendancePage() {
   };
 
   const maxHours = 9;
-  const displayRecords = records.length > 0 ? records : defaultRecords;
+  const displayRecords = mergedRecords.length > 0 ? mergedRecords : defaultRecords;
   const recentRecords = displayRecords.slice(0, 7);
 
   return (
@@ -209,6 +223,24 @@ export default function AttendancePage() {
           onClose={() => { setShowModal(false); }}
           onClockIn={async (method) => {
             await clockIn({ employeeId: 'emp-001', method });
+            const clockInTime = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+            addLocalAttendance({
+              id: `att-local-${Date.now()}`,
+              employeeId: 'emp-001',
+              userId: 'emp-001',
+              date: todayStr,
+              clockIn: clockInTime,
+              clockOut: null,
+              clockMethod: method,
+              status: 'present',
+              productiveHours: 0,
+              breakHours: 0,
+              overtimeHours: 0,
+              totalHours: 0,
+              locationVerified: true,
+              ipValidated: true,
+              shiftName: 'General Shift'
+            });
           }}
         />
       )}
@@ -288,6 +320,21 @@ export default function AttendancePage() {
                 setShowModal(true);
               } else {
                 await clockOut({ employeeId: 'emp-001' });
+                const clockOutTime = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+                const currentTodayRec = displayRecords.find(r => r.date === todayStr);
+                if (currentTodayRec) {
+                  const [inH, inM] = (currentTodayRec.clockIn || '09:00').split(':').map(Number);
+                  const [outH, outM] = clockOutTime.split(':').map(Number);
+                  const diffMs = (outH * 60 + outM) - (inH * 60 + inM);
+                  const totalHours = Math.max(0, diffMs / 60);
+                  addLocalAttendance({
+                    ...currentTodayRec,
+                    clockOut: clockOutTime,
+                    totalHours: parseFloat(totalHours.toFixed(2)),
+                    productiveHours: parseFloat(Math.max(0, totalHours - 0.5).toFixed(2)),
+                    status: 'present'
+                  });
+                }
               }
             }}
             style={{
