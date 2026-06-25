@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WorkFlow HRMS - Technical Reference Document</title>
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient-start: #0f172a;
+      --bg-gradient-end: #020617;
+      --card-bg: rgba(30, 41, 59, 0.4);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --primary-teal: #14b8a6;
+      --primary-orange: #f97316;
+      --primary-purple: #a855f7;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'Fira Code', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-badge {
+      background: linear-gradient(135deg, var(--primary-teal), var(--primary-orange));
+      color: white;
+      font-weight: 800;
+      font-size: 1.25rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+    }
+
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-teal), #0d9488);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 12px rgba(20, 184, 166, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(20, 184, 166, 0.3);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-primary);
+      border: 1px solid var(--card-border);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .main-container {
+      display: flex;
+      flex: 1;
+      max-width: 1600px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2rem;
+      gap: 2rem;
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      width: 320px;
+      position: sticky;
+      top: 6rem;
+      height: calc(100vh - 8rem);
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    /* Custom Scrollbar for sidebar */
+    .sidebar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .sidebar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .sidebar::-webkit-scrollbar-thumb {
+      background: var(--card-border);
+      border-radius: 10px;
+    }
+
+    .sidebar-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .sidebar-menu {
+      list-style: none;
+    }
+
+    .sidebar-menu li {
+      margin-bottom: 0.25rem;
+    }
+
+    .sidebar-menu a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: block;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sidebar-menu a:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .sidebar-menu a.active {
+      color: var(--primary-teal);
+      background: rgba(20, 184, 166, 0.1);
+      font-weight: 500;
+    }
+
+    /* Content Area */
+    .content-area {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .doc-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 0.75rem;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 1.5rem;
+      background: linear-gradient(to bottom, var(--primary-teal), var(--primary-orange));
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #e2e8f0;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    /* Path representation */
+    .path-container {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      overflow-x: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .path-label {
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+
+    .path-value {
+      color: #38bdf8;
+      word-break: break-all;
+    }
+
+    .path-value.new-file {
+      color: var(--primary-teal);
+    }
+
+    .path-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .path-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+    }
+
+    .badge-teal { background: rgba(20, 184, 166, 0.15); color: var(--primary-teal); border: 1px solid rgba(20, 184, 166, 0.2); }
+    .badge-orange { background: rgba(249, 115, 22, 0.15); color: var(--primary-orange); border: 1px solid rgba(249, 115, 22, 0.2); }
+    .badge-purple { background: rgba(168, 85, 247, 0.15); color: var(--primary-purple); border: 1px solid rgba(168, 85, 247, 0.2); }
+    .badge-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    td {
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    tr:hover td {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    /* Tree View / Directory maps */
+    pre.directory-map {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      overflow-x: auto;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Print Style adjustments */
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+      header, .sidebar, .btn {
+        display: none !important;
+      }
+      .main-container {
+        padding: 0;
+      }
+      .content-area {
+        gap: 1.5rem;
+      }
+      .doc-section {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        page-break-inside: avoid;
+      }
+      .section-title {
+        color: black !important;
+        border-bottom: 2px solid #ccc !important;
+      }
+      .path-container {
+        background: #f1f5f9 !important;
+        border: 1px solid #cbd5e1 !important;
+      }
+      .path-value {
+        color: #0369a1 !important;
+      }
+      p, td {
+        color: #334155 !important;
+      }
+      th {
+        color: black !important;
+        background: #f1f5f9 !important;
+        border-bottom: 2px solid #cbd5e1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <span class="logo-badge">WF</span>
+      <span class="logo-text">WorkFlow HRMS</span>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-secondary" onclick="window.print()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        Print / PDF Reference
+      </button>
+      <a href="REFERENCE_GUIDE.md" class="btn btn-primary" download>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Download Markdown
+      </a>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">Getting Started</div>
+        <ul class="sidebar-menu">
+          <li><a href="#overview" class="active">Architecture Overview</a></li>
+          <li><a href="#directories">Directory Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">HRMS Modules</div>
+        <ul class="sidebar-menu">
+          <li><a href="#mod-onboarding">1. Onboarding</a></li>
+          <li><a href="#mod-attendance">2. Attendance</a></li>
+          <li><a href="#mod-leave">3. Leave Management</a></li>
+          <li><a href="#mod-payroll">4. Payroll & Compliance</a></li>
+          <li><a href="#mod-documents">5. Documents Vault</a></li>
+          <li><a href="#mod-expenses">6. Expenses & Claims</a></li>
+          <li><a href="#mod-performance">7. Performance & OKRs</a></li>
+          <li><a href="#mod-contributions">8. Contributions Feed</a></li>
+          <li><a href="#mod-training">9. Training & Quizzes</a></li>
+          <li><a href="#mod-recruitment">10. Recruitment Board</a></li>
+          <li><a href="#mod-recognition">11. Social Recognition</a></li>
+          <li><a href="#mod-announcements">12. Announcements</a></li>
+          <li><a href="#mod-team">13. Team Directory</a></li>
+          <li><a href="#mod-analytics">14. Analytics SVG</a></li>
+          <li><a href="#mod-copilot">15. HR Copilot AI</a></li>
+          <li><a href="#mod-todos">16. Daily Tasks Widget</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+      
+      <!-- Section 1: Overview -->
+      <section id="overview" class="doc-section">
+        <h2 class="section-title">Project Architecture Overview</h2>
+        <p>
+          WorkFlow is built as a mobile-first responsive web application. It integrates both frontend interface screens and local API route endpoints inside a single Next.js project to allow zero-configuration full-stack deployment.
+        </p>
+        <table style="margin-top: 1rem;">
+          <thead>
+            <tr>
+              <th style="width: 30%">Tech Stack Element</th>
+              <th>Details & Implementation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Framework</strong></td>
+              <td>Next.js 16 (App Router), React 19, TypeScript. Utilizes React Server Components (RSC) and client-side page transitions.</td>
+            </tr>
+            <tr>
+              <td><strong>State Management</strong></td>
+              <td>Zustand with <code>persist</code> middleware to store active user roles (Employee, Manager, HR, Admin) and onboarding switches locally in the browser.</td>
+            </tr>
+            <tr>
+              <td><strong>Styling</strong></td>
+              <td>Tailwind CSS (version 4) implementing a customized, premium Teal & Orange palette with frosted-glass backdrop filters.</td>
+            </tr>
+            <tr>
+              <td><strong>API & DB Mock Layer</strong></td>
+              <td>TanStack React Query handles server state fetching and mutations. The server side runs API endpoints that read from and write to <code>next.js/db.json</code> on local server instances.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 2: Directory Structure -->
+      <section id="directories" class="doc-section">
+        <h2 class="section-title">Directory Structure Map</h2>
+        <p>The code is divided into Next.js App router folders, components, custom hooks, and shared libraries.</p>
+        <pre class="directory-map">
+next.js/
+├── app/                        # Next.js App Router (Pages & API Handlers)
+│   ├── (app)/                  # Role-Protected Application Views
+│   │   ├── home/               # Central Employee/Manager Dashboard
+│   │   ├── onboarding/         # Checklist, Relocation, Welcomes & Connection
+│   │   └── ...                 # Other module page folders
+│   ├── (auth)/                 # Authentication views (Login screen)
+│   ├── api/                    # Serverless API routes (Reads/Writes to db.json)
+│   ├── globals.css             # Main stylesheet & Tailwind configuration
+│   └── layout.tsx              # Shell setup & React Query provider wrapper
+├── components/                 # Reusable Layout & Widget UI Components
+│   ├── shell/                  # Navigation bar, top headers, role dropdown
+│   └── copilot/                # AI Assistant drawer
+├── hooks/                      # Custom React Query hook triggers
+├── lib/                        # Common helper libraries & mock database wrappers
+└── db.json                     # Server state mock database file</pre>
+      </section>
+
+      <!-- Module 1: Onboarding -->
+      <section id="mod-onboarding" class="doc-section">
+        <h2 class="section-title">1. Onboarding Module</h2>
+        <p>Handles the entire new hire experience with task phases, CEO message, team introductions, relocation support, and handoff.</p>
+        
+        <h3>Core Features & Details:</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Feature Capability</th>
+              <th>Technical Implementation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>5-Phase Checklist</strong></td>
+              <td>Includes <code>pre-joining</code>, <code>day-1</code>, <code>week-1</code>, <code>week-2</code>, and <code>month-1</code>. Displays task details like priority levels (High/Medium/Low) and assignees. Restricts marking complete to employee-assigned tasks; others show "Pending action by [Assignee]". Writes date on completion.</td>
+            </tr>
+            <tr>
+              <td><strong>Welcome Message Video</strong></td>
+              <td>CEO card triggers modal with image profile of CEO Arun Krishnamurthy. Play button triggers browser <code>window.speechSynthesis</code> API reading welcome text aloud, paired with custom play/pause status and audio visualizer.</td>
+            </tr>
+            <tr>
+              <td><strong>Relocation Tracker</strong></td>
+              <td>Displays accommodation, visa status, travel details, local buddy details, allowances with currency formatting, and support tickets grid. Contains form to post relocation tickets directly to the mock database.</td>
+            </tr>
+            <tr>
+              <td><strong>Meet Team Introductions</strong></td>
+              <td>Displays key contacts. "Mark as Met" button updates status in backend database dynamically.</td>
+            </tr>
+            <tr>
+              <td><strong>Complete Handoff Flow</strong></td>
+              <td>Clicking "Complete Onboarding" calls completion API route, resets Zustand state, and moves the employee to the standard homepage.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">Checklist view</span><span class="path-value">app/(app)/onboarding/page.tsx</span></div>
+        <div class="path-container"><span class="path-label">State Store Hook</span><span class="path-value">stores/hrmsStore.ts</span></div>
+        <div class="path-container"><span class="path-label">Fetch & Mutation Hooks</span><span class="path-value">hooks/useOnboarding.ts</span></div>
+        <div class="path-container"><span class="path-label">Database Seeds</span><span class="path-value">lib/seed.ts</span></div>
+        <div class="path-container"><span class="path-label">Fallback Default Data</span><span class="path-value">data/onboarding.ts</span></div>
+        
+        <h3>API Endpoints:</h3>
+        <div class="path-container"><span class="path-label">GET Details</span><span class="path-value">GET /api/onboarding/[id] -> app/api/onboarding/[id]/route.ts</span></div>
+        <div class="path-container"><span class="path-label">PATCH Complete Task</span><span class="path-value">PATCH /api/onboarding/tasks/[id] -> app/api/onboarding/tasks/[id]/route.ts</span></div>
+        <div class="path-container"><span class="path-label">PATCH Connect Team</span><span class="path-value">PATCH /api/onboarding/team/[id] -> app/api/onboarding/team/[id]/route.ts</span></div>
+        <div class="path-container"><span class="path-label">POST Submit Ticket</span><span class="path-value">POST /api/onboarding/relocation/tickets -> app/api/onboarding/relocation/tickets/route.ts</span></div>
+        <div class="path-container"><span class="path-label">POST Complete Onboarding</span><span class="path-value">POST /api/onboarding/[id]/complete -> app/api/onboarding/[id]/complete/route.ts</span></div>
+      </section>
+
+      <!-- Module 2: Attendance -->
+      <section id="mod-attendance" class="doc-section">
+        <h2 class="section-title">2. Attendance Module</h2>
+        <p>Captures shift timings, triggers IP checks, maps geolocation coordinates, and offers coverage sheets to reporting managers.</p>
+        
+        <h3>Core Features:</h3>
+        <ul>
+          <li><strong>Punch Clock widget:</strong> Handles dynamic timing counters, shifts schedules, and break tracking calculations.</li>
+          <li><strong>Verification Check:</strong> Simulates GPS, IP address parsing, and displays a webcam/selfie check frame boundary.</li>
+          <li><strong>Manager roster overview:</strong> Lets leaders see live check-in statuses, schedules, and active counts for coverage.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">Attendance View</span><span class="path-value">app/(app)/attendance/page.tsx</span></div>
+        <div class="path-container"><span class="path-label">React Query hook</span><span class="path-value">hooks/useAttendance.ts</span></div>
+        <div class="path-container"><span class="path-label">GET Shifts</span><span class="path-value">GET /api/attendance -> app/api/attendance/route.ts</span></div>
+        <div class="path-container"><span class="path-label">POST Clock In</span><span class="path-value">POST /api/attendance/clockin -> app/api/attendance/clockin/route.ts</span></div>
+        <div class="path-container"><span class="path-label">POST Clock Out</span><span class="path-value">POST /api/attendance/clockout -> app/api/attendance/clockout/route.ts</span></div>
+      </section>
+
+      <!-- Module 3: Leave Management -->
+      <section id="mod-leave" class="doc-section">
+        <h2 class="section-title">3. Leave Management</h2>
+        <p>Supports multiple leave categories, counts balance limits, calculates date ranges, and tracks approval lines.</p>
+        
+        <h3>Core Features:</h3>
+        <ul>
+          <li><strong>Leave Balances:</strong> Interactive meters showing Casual, Sick, Maternity/Paternity, and LWP balances.</li>
+          <li><strong>Request Forms:</strong> Automatic day counts excluding holidays, category select dropdowns, and reason entries.</li>
+          <li><strong>Approvals Ledger:</strong> Manager panel displaying incoming requests with options to approve or reject with comments.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">Leave View Page</span><span class="path-value">app/(app)/leave/page.tsx</span></div>
+        <div class="path-container"><span class="path-label">React Query hook</span><span class="path-value">hooks/useLeave.ts</span></div>
+        <div class="path-container"><span class="path-label">GET/POST Requests</span><span class="path-value">GET/POST /api/leave/requests -> app/api/leave/requests/route.ts</span></div>
+        <div class="path-container"><span class="path-label">PATCH Approve Status</span><span class="path-value">PATCH /api/leave/requests/[id] -> app/api/leave/requests/[id]/route.ts</span></div>
+      </section>
+
+      <!-- Module 4: Payroll & Compliance -->
+      <section id="mod-payroll" class="doc-section">
+        <h2 class="section-title">4. Payroll & Compliance</h2>
+        <p>Computes monthly pay metrics, localized statutory compliance lines, tax structures, and downloads.</p>
+        
+        <h3>Core Features:</h3>
+        <ul>
+          <li><strong>Salary Slip Breakdown:</strong> Itemized earnings (Basic, HRA, Allowance) and deductions (PF, ESI, TDS for India; FICA, Social Security for US).</li>
+          <li><strong>Payslips List:</strong> Multi-month selector lists with actions to trigger PDF download simulations.</li>
+          <li><strong>Statutory Compliance Check:</strong> Trackers displaying state tax and federal retirement compliance.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">Payroll View</span><span class="path-value">app/(app)/payroll/page.tsx</span></div>
+        <div class="path-container"><span class="path-label">React Query hook</span><span class="path-value">hooks/usePayroll.ts</span></div>
+        <div class="path-container"><span class="path-label">GET Pay slips</span><span class="path-value">GET /api/payroll -> app/api/payroll/route.ts</span></div>
+      </section>
+
+      <!-- Module 5: Documents Vault -->
+      <section id="mod-documents" class="doc-section">
+        <h2 class="section-title">5. Documents Vault</h2>
+        <p>Stores personal IDs, educational sheets, work permissions, tax filings, and manages verification checks.</p>
+        
+        <h3>Core Features:</h3>
+        <ul>
+          <li><strong>Document Folders:</strong> Organized categories showing upload dates and expiration tags.</li>
+          <li><strong>File Uploader:</strong> Drag-and-drop file select dialog simulator.</li>
+          <li><strong>HR Status Verifications:</strong> Tools letting HR view uploaded files and toggle status between Missing, Uploaded, Verified, or Rejected.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">Documents View</span><span class="path-value">app/(app)/documents/page.tsx</span></div>
+        <div class="path-container"><span class="path-label">React Query hook</span><span class="path-value">hooks/useDocuments.ts</span></div>
+        <div class="path-container"><span class="path-label">GET/POST Files</span><span class="path-value">GET/POST /api/documents -> app/api/documents/route.ts</span></div>
+      </section>
+
+      <!-- Module 6: Expenses & Claims -->
+      <section id="mod-expenses" class="doc-section">
+        <h2 class="section-title">6. Expenses & Claims</h2>
+        <p>Lets users file reimbursements, compute mileage amounts, check corporate policy limits, and review payouts.</p>
+        
+        <h3>Core Features:</h3>
+        <ul>
+          <li><strong>Expense Submission:</strong> Category selections, date, claim amount fields, receipt previews.</li>
+          <li><strong>Mileage Multiplier:</strong> Automatic mileage claim generation based on distance inputs.</li>
+          <li><strong>Validation limits:</strong> Triggers warning messages if a claim exceeds corporate limits.</li>
+          <li><strong>Manager queues:</strong> Reimbursement lists letting managers approve or reject expense claims.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">Expenses View</span><span class="path-value">app/(app)/expenses/page.tsx</span></div>
+        <div class="path-container"><span class="path-label">React Query hook</span><span class="path-value">hooks/useExpenses.ts</span></div>
+        <div class="path-container"><span class="path-label">GET/POST Expenses</span><span class="path-value">GET/POST /api/expenses -> app/api/expenses/route.ts</span></div>
+        <div class="path-container"><span class="path-label">PATCH Expense Status</span><span class="path-value">PATCH /api/expenses/[id] -> app/api/expenses/[id]/route.ts</span></div>
+      </section>
+
+      <!-- Module 7: Performance & Goals -->
+      <section id="mod-performance" class="doc-section">
+        <h2 class="section-title">7. Performance & Goals (OKRs)</h2>
+        <p>Manages objective targets, progress percentages, rating scales, peer performance reviews, and manager discussions.</p>
+        
+        <h3>Core Features:</h3>
+        <ul>
+          <li><strong>OKR Tracker:</strong> Objectives and measurable Key Results mapped to progress bars.</li>
+          <li><strong>Reviews:</strong> Form inputs to rate core values, detail achievements, and list opportunities for development.</li>
+          <li><strong>Coaching:</strong> List of scheduled reviews and performance coaching conversations.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">Performance View</span><span class="path-value">app/(app)/performance/page.tsx</span></div>
+        <div class="path-container"><span class="path-label">React Query hook</span><span class="path-value">hooks/usePerformance.ts</span></div>
+        <div class="path-container"><span class="path-label">GET/POST Goals</span><span class="path-value">GET/POST /api/performance/goals -> app/api/performance/goals/route.ts</span></div>
+        <div class="path-container"><span class="path-label">GET Reviews</span><span class="path-value">GET /api/performance/reviews -> app/api/performance/reviews/route.ts</span></div>
+      </section>
+
+      <!-- Module 8: Contributions Feed -->
+      <section id="mod-contributions" class="doc-section">
+        <h2 class="section-title">8. Contributions Feed</h2>
+        <p>A gamified portal where employees claim open tasks to earn points and climb the team leaderboard.</p>
+        
+        <h3>Core Features:</h3>
+        <ul>
+          <li><strong>Point Feed:</strong> Streams showing claimed points, category tags, and details.</li>
+          <li><strong>App Leaderboard:</strong> Dynamic rankings based on accumulated points and won badges.</li>
+          <li><strong>Claims Catalog:</strong> Open organization tasks with claims controls that register selections.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">Contributions Page</span><span class="path-value">app/(app)/contributions/page.tsx</span></div>
+        <div class="path-container"><span class="path-label">React Query hook</span><span class="path-value">hooks/useContributions.ts</span></div>
+        <div class="path-container"><span class="path-label">GET Feed</span><span class="path-value">GET /api/contributions -> app/api/contributions/route.ts</span></div>
+        <div class="path-container"><span class="path-label">GET Leaderboard</span><span class="path-value">GET /api/contributions/leaderboard -> app/api/contributions/leaderboard/route.ts</span></div>
+        <div class="path-container"><span class="path-label">GET Catalog Items</span><span class="path-value">GET /api/contributions/items -> app/api/contributions/items/route.ts</span></div>
+        <div class="path-container"><span class="path-label">POST Claim Item</span><span class="path-value">POST /api/contributions/items/[id]/claim -> app/api/contributions/items/[id]/claim/route.ts</span></div>
+      </section>
+
+      <!-- Module 9: Training & Quizzes -->
+      <section id="mod-training" class="doc-section">
+        <h2 class="section-title">9. Training & Learning Hub</h2>
+        <p>Integrates company guides, video lectures, questionnaire cards, and generates training badges.</p>
+        
+        <h3>Core Features:</h3>
+        <ul>
+          <li><strong>Course Catalog:</strong> Shows completion progress, estimated duration, and tags.</li>
+          <li><strong>Interactive Quizzes:</strong> Multiple choice questions checking content retention, offering scores on submit.</li>
+          <li><strong>Completion Badge:</strong> Generates certification alerts on hitting 100% video and quiz progression.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">Learning Page</span><span class="path-value">app/(app)/training/page.tsx</span></div>
+        <div class="path-container"><span class="path-label">React Query hook</span><span class="path-value">hooks/useTraining.ts</span></div>
+        <div class="path-container"><span class="path-label">GET Courses</span><span class="path-value">GET /api/training -> app/api/training/route.ts</span></div>
+        <div class="path-container"><span class="path-label">POST Save Progress</span><span class="path-value">POST /api/training/[id]/progress -> app/api/training/[id]/progress/route.ts</span></div>
+      </section>
+
+      <!-- Module 10: Recruitment Board -->
+      <section id="mod-recruitment" class="doc-section">
+        <h2 class="section-title">10. Recruitment Board</h2>
+        <p>Provides active career boards, lists applications, displays candidate profiles, and manages scheduling queues.</p>
+        
+        <h3>Core Features:</h3>
+        <ul>
+          <li><strong>Job Postings:</strong> Listings displaying roles, status tags, and details.</li>
+          <li><strong>Kanban Pipeline:</strong> Columns showing Application, Interview, Offer, and Hired stages.</li>
+          <li><strong>Schedule Forms:</strong> Simple inputs to pick dates, times, and reviewers for candidate sessions.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">Recruitment View</span><span class="path-value">app/(app)/recruitment/page.tsx</span></div>
+        <div class="path-container"><span class="path-label">React Query hook</span><span class="path-value">hooks/useRecruitment.ts</span></div>
+        <div class="path-container"><span class="path-label">GET Job Postings</span><span class="path-value">GET /api/recruitment/jobs -> app/api/recruitment/jobs/route.ts</span></div>
+        <div class="path-container"><span class="path-label">GET/POST Pipeline</span><span class="path-value">GET/POST /api/recruitment/candidates -> app/api/recruitment/candidates/route.ts</span></div>
+      </section>
+
+      <!-- Module 11: Social Recognition -->
+      <section id="mod-recognition" class="doc-section">
+        <h2 class="section-title">11. Social Recognition Feed</h2>
+        <p>A social board where peers congratulate each other, post appreciation badges, and comment.</p>
+        
+        <h3>Core Features:</h3>
+        <ul>
+          <li><strong>Shout-out Stream:</strong> Feed display cards showing peer details, tag categories, and messages.</li>
+          <li><strong>Social Toggles:</strong> React buttons for clapping/liking and leaving comments.</li>
+          <li><strong>Send Appreciation:</strong> Dropdown lists to select a peer and write a public message.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">Recognition Page</span><span class="path-value">app/(app)/recognition/page.tsx</span></div>
+        <div class="path-container"><span class="path-label">React Query hook</span><span class="path-value">hooks/useRecognition.ts</span></div>
+        <div class="path-container"><span class="path-label">GET/POST Feed</span><span class="path-value">GET/POST /api/recognition -> app/api/recognition/route.ts</span></div>
+        <div class="path-container"><span class="path-label">POST Toggle Like</span><span class="path-value">POST /api/recognition/[id]/like -> app/api/recognition/[id]/like/route.ts</span></div>
+      </section>
+
+      <!-- Module 12: Announcements -->
+      <section id="mod-announcements" class="doc-section">
+        <h2 class="section-title">12. Announcements</h2>
+        <p>Maintains official company bulletins, policy changes, and lists mandatory acknowledgments.</p>
+        
+        <h3>Core Features:</h3>
+        <ul>
+          <li><strong>Bulletin Board:</strong> High-priority cards showing categories (Product, Policy, Fun).</li>
+          <li><strong>Target Scope:</strong> Filter logic limiting display visibility according to active roles.</li>
+          <li><strong>Acknowledgment:</strong> Form triggers requiring users to verify reading critical policy adjustments.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">Announcements Page</span><span class="path-value">app/(app)/announcements/page.tsx</span></div>
+        <div class="path-container"><span class="path-label">React Query hook</span><span class="path-value">hooks/useAnnouncements.ts</span></div>
+        <div class="path-container"><span class="path-label">GET/POST Bulletins</span><span class="path-value">GET/POST /api/announcements -> app/api/announcements/route.ts</span></div>
+        <div class="path-container"><span class="path-label">POST Acknowledge</span><span class="path-value">POST /api/announcements/[id]/acknowledge -> app/api/announcements/[id]/acknowledge/route.ts</span></div>
+      </section>
+
+      <!-- Module 13: Team Directory -->
+      <section id="mod-team" class="doc-section">
+        <h2 class="section-title">13. Team Directory</h2>
+        <p>A list displaying staff roles, contact cards, departments, and reporting relationships.</p>
+        
+        <h3>Core Features:</h3>
+        <ul>
+          <li><strong>Employee Grid:</strong> Cards showing avatars, designations, email, phone numbers, and departments.</li>
+          <li><strong>Search & Filter:</strong> Live filtering by name or department categories.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">Team Page View</span><span class="path-value">app/(app)/team/page.tsx</span></div>
+        <div class="path-container"><span class="path-label">React Query hook</span><span class="path-value">hooks/useTeam.ts</span></div>
+        <div class="path-container"><span class="path-label">GET Employees</span><span class="path-value">GET /api/employees -> app/api/employees/route.ts</span></div>
+      </section>
+
+      <!-- Module 14: Analytics -->
+      <section id="mod-analytics" class="doc-section">
+        <h2 class="section-title">14. Analytics Charts</h2>
+        <p>Provides custom visual graphs showing attendance levels, department budgets, and compliance scores.</p>
+        
+        <h3>Core Features:</h3>
+        <ul>
+          <li><strong>Headcount Trends:</strong> SVG line structures graphing active staffing changes.</li>
+          <li><strong>Compliance indicators:</strong> Radial progress visualizers measuring documents verify ratings.</li>
+          <li><strong>Expenses & Salary:</strong> Block charts comparing budgets.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">Analytics Page</span><span class="path-value">app/(app)/analytics/page.tsx</span></div>
+      </section>
+
+      <!-- Module 15: HR Copilot AI -->
+      <section id="mod-copilot" class="doc-section">
+        <h2 class="section-title">15. HR Copilot (AI Assistant)</h2>
+        <p>Provides a conversational pane with context-aware triggers linking directly to HR data schemas.</p>
+        
+        <h3>Core Features:</h3>
+        <ul>
+          <li><strong>Context Panel:</strong> Side drawer linking suggestions automatically tailored to the user's current view.</li>
+          <li><strong>Onboarding Awareness:</strong> Recommends actions, checks buddy lists, tasks checklist count, and ticket logs.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">UI Side Drawer component</span><span class="path-value">components/copilot/CopilotDrawer.tsx</span></div>
+        <div class="path-container"><span class="path-label">POST Chat Dispatch</span><span class="path-value">POST /api/copilot -> app/api/copilot/route.ts</span></div>
+      </section>
+
+      <!-- Module 16: Daily Tasks Widget -->
+      <section id="mod-todos" class="doc-section">
+        <h2 class="section-title">16. Daily Tasks Widget (Todos)</h2>
+        <p>A quick-access dashboard widget and dedicated views tracking personal daily checklists.</p>
+        
+        <h3>Core Features:</h3>
+        <ul>
+          <li><strong>Dashboard Widget:</strong> Renders directly on the Home screen for easy checkboxes toggle.</li>
+          <li><strong>Dedicated page:</strong> Manage tasks, filter status, and add new text items.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Code Files Reference:</h3>
+        <div class="path-container"><span class="path-label">Home Dashboard page</span><span class="path-value">app/(app)/home/page.tsx</span></div>
+        <div class="path-container"><span class="path-label">Todos Page</span><span class="path-value">app/(app)/todos/page.tsx</span></div>
+        <div class="path-container"><span class="path-label">React Query hook</span><span class="path-value">hooks/useTodos.ts</span></div>
+        <div class="path-container"><span class="path-label">GET/POST/PATCH Tasks</span><span class="path-value">GET/POST/PATCH /api/todos -> app/api/todos/route.ts</span></div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer style="text-align: center; padding: 2rem; color: var(--text-secondary); border-top: 1px solid var(--card-border); margin-top: auto; font-size: 0.85rem;">
+    &copy; 2026 WorkFlow HRMS Systems. All Rights Reserved. Confidential Reference Document.
+  </footer>
+
+  <script>
+    // Smooth scrolling active state for sidebar links
+    const links = document.querySelectorAll('.sidebar-menu a');
+    const sections = document.querySelectorAll('.doc-section');
+
+    function changeActiveLink() {
+      let index = sections.length;
+
+      while(--index && window.scrollY + 150 < sections[index].offsetTop) {}
+      
+      links.forEach((link) => link.classList.remove('active'));
+      if (links[index]) {
+        links[index].classList.add('active');
+      }
+    }
+
+    changeActiveLink();
+    window.addEventListener('scroll', changeActiveLink);
+  </script>
+</body>
+</html>

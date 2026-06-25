@@ -10,15 +10,8 @@ interface Message {
   timestamp: Date;
 }
 
-const QUICK_ACTIONS = [
-  'How many leave days do I have?',
-  'When is my next payslip?',
-  'How to apply for comp-off?',
-  'What are my pending tasks?',
-];
-
 export function CopilotDrawer() {
-  const { copilotOpen, setCopilotOpen, activeRole, currentView } = useHrmsStore();
+  const { copilotOpen, setCopilotOpen, activeRole, currentView, isOnboarding } = useHrmsStore();
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 'init',
@@ -31,6 +24,18 @@ export function CopilotDrawer() {
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  const QUICK_ACTIONS = isOnboarding ? [
+    'What is my onboarding progress?',
+    'Who is my buddy & coordinator?',
+    'How do I submit relocation tickets?',
+    'What are my pending onboarding tasks?',
+  ] : [
+    'How many leave days do I have?',
+    'When is my next payslip?',
+    'How to apply for comp-off?',
+    'What are my pending tasks?',
+  ];
 
   useEffect(() => {
     if (copilotOpen) {
@@ -50,7 +55,7 @@ export function CopilotDrawer() {
       const res = await fetch('/api/copilot', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text.trim(), currentView, userRole: activeRole, isOnboarding: false }),
+        body: JSON.stringify({ message: text.trim(), currentView, userRole: activeRole, isOnboarding }),
       });
       const data = await res.json();
       setMessages(prev => [...prev, { id: Date.now().toString() + 'a', role: 'assistant', content: data.response, timestamp: new Date() }]);

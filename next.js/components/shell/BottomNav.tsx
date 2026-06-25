@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import { useHrmsStore, UserRole } from '../../stores/hrmsStore';
 import {
   Home, Users, Calendar, BarChart3, BookOpen,
-  Megaphone, UserCheck, TrendingUp, Layers
+  Megaphone, UserCheck, TrendingUp, Layers, ClipboardList, FileText
 } from 'lucide-react';
 
 type NavItem = { href: string; label: string; icon: React.ComponentType<{ size?: number; strokeWidth?: number }> };
@@ -42,8 +42,15 @@ const navByRole: Record<UserRole, NavItem[]> = {
 
 export function BottomNav() {
   const pathname = usePathname();
-  const activeRole = useHrmsStore((s) => s.activeRole);
-  const items = navByRole[activeRole];
+  const { activeRole, isOnboarding } = useHrmsStore();
+
+  const onboardingItems: NavItem[] = [
+    { href: '/onboarding', label: 'Onboarding', icon: ClipboardList },
+    { href: '/training', label: 'Learning', icon: BookOpen },
+    { href: '/documents', label: 'Documents', icon: FileText },
+  ];
+
+  const items = isOnboarding ? onboardingItems : navByRole[activeRole];
 
   return (
     <nav className="bottom-nav" role="navigation" aria-label="Main navigation">

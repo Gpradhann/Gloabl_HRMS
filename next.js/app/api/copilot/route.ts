@@ -25,8 +25,24 @@ const RESPONSES: Record<string, string> = {
 
 const FALLBACK = `I'm here to help with your HR questions! I can assist with:\n\n• 📅 Leave balances & requests\n• 💰 Payroll & payslips\n• 🕐 Attendance & clock-in\n• 📋 HR policies\n• 💳 Expense reimbursements\n• 🎯 Goals & performance\n• 📚 Training modules\n• 🏆 Recognition\n• 🚀 Onboarding tasks\n\nJust ask me anything and I'll do my best to help!`;
 
-function getResponse(message: string, role: string, view: string): string {
+function getResponse(message: string, role: string, view: string, isOnboarding: boolean): string {
   const lower = message.toLowerCase();
+
+  if (isOnboarding) {
+    if (lower.includes('progress') || lower.includes('complete') || lower.includes('%') || lower.includes('done')) {
+      return `📊 **Your Onboarding Progress**\n\nYour onboarding checklist is currently **35% complete** (2 of 8 tasks completed).\n\nYou have completed your pre-joining documents, but still need to complete day-1 and week-1 tasks like setting up your WorkFlow account and completing company policy training.`;
+    }
+    if (lower.includes('buddy') || lower.includes('coordinator') || lower.includes('sarah') || lower.includes('contact') || lower.includes('phone') || lower.includes('call')) {
+      return `🤝 **Buddy & Coordinator Details**\n\n• **Onboarding Buddy**: Sarah Johnson (Senior Software Engineer). She is here to help you get settled and answer any work culture questions.\n• **Local Relocation Buddy**: Vikram Nair (+91 98765 77777). He will guide you with local Whitefield amenities.\n\nYou can reach out to Sarah or Vikram directly on Slack or call them!`;
+    }
+    if (lower.includes('ticket') || lower.includes('relocat') || lower.includes('support')) {
+      return `🎫 **Relocation Support & Tickets**\n\nYou can submit relocation support tickets directly in the **Relocation** tab of your Onboarding dashboard. Current tickets:\n• ID: rt-001 (Furniture setup) — ✅ Resolved\n• ID: rt-002 (Internet connection) — ⏳ In Progress\n\nUse the form at the bottom of the Relocation tab to submit a new ticket for accommodation, travel, or allowance queries.`;
+    }
+    if (lower.includes('task') || lower.includes('todo') || lower.includes('checklist') || lower.includes('pending') || lower.includes('what to do')) {
+      return `📋 **Your Pending Onboarding Tasks**\n\nHere are your immediate pending tasks:\n1. 🔄 **Set up WorkFlow account & 2FA** (Day 1 - High)\n2. ⏳ **IT Equipment Setup** (Day 1 - High)\n3. ⏳ **Meet your buddy: Sarah Johnson** (Day 1 - Medium)\n4. ⏳ **Complete Company Policy eLearning** (Week 1 - High)\n\nGo to the **Checklist** tab in Onboarding to check off employee-assigned tasks!`;
+    }
+    return `🚀 **Onboarding Copilot Assistant**\n\nWelcome to WorkFlow, Alex Rivera! I can help you with your new joiner questions:\n• 📊 "What is my onboarding progress?"\n• 🤝 "Who is my buddy?"\n• 🎫 "How do I submit relocation tickets?"\n• 📋 "What are my pending onboarding tasks?"\n\nFeel free to ask me anything about your transition.`;
+  }
 
   if (lower.includes('leave') || lower.includes('vacation') || lower.includes('time off') || lower.includes('casual') || lower.includes('sick')) return RESPONSES.leave;
   if (lower.includes('payslip') || lower.includes('salary') || lower.includes('pay') || lower.includes('ctc') || lower.includes('tax') || lower.includes('pf')) return RESPONSES.payslip;
@@ -53,8 +69,8 @@ function getResponse(message: string, role: string, view: string): string {
 
 export async function POST(req: NextRequest) {
   try {
-    const { message, currentView, userRole } = await req.json();
-    const response = getResponse(message || '', userRole || 'Employee', currentView || 'home');
+    const { message, currentView, userRole, isOnboarding } = await req.json();
+    const response = getResponse(message || '', userRole || 'Employee', currentView || 'home', !!isOnboarding);
 
     // Simulate slight delay for realism
     await new Promise(r => setTimeout(r, 600 + Math.random() * 400));

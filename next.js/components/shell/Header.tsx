@@ -8,7 +8,7 @@ import { useNotifications } from '../../hooks/useNotifications';
 import { NotificationPanel } from './NotificationPanel';
 
 export function Header() {
-  const activeRole = useHrmsStore((s) => s.activeRole);
+  const { activeRole, isOnboarding } = useHrmsStore();
   const { unreadCount } = useNotifications(activeRole);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,6 +27,13 @@ export function Header() {
         <span style={{ fontSize: '1.125rem', fontWeight: 800, letterSpacing: '-0.02em' }}>
           <span style={{ color: '#000000' }}>Work</span><span style={{ color: '#000000' }}>Flow</span>
         </span>
+        {isOnboarding && (
+          <span style={{
+            fontSize: '0.65rem', fontWeight: 800, padding: '2px 8px', borderRadius: 999,
+            background: 'linear-gradient(135deg, #7c3aed, #a78bfa)', color: 'white',
+            boxShadow: '0 2px 6px rgb(124 58 237 / 0.2)',
+          }}>Onboarding</span>
+        )}
       </Link>
 
       {/* Right side */}

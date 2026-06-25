@@ -31,9 +31,15 @@ export const onboardingData: OnboardingEmployee = {
     { id: 'ot-012', title: 'Set Up Development Environment', description: 'Clone repos, install tools, and run the app locally with buddy\'s help.', phase: 'week-1', priority: 'high', dueDate: '2026-07-04', assignee: 'Alex Kumar', status: 'pending' },
     { id: 'ot-013', title: 'Attend Sprint Planning', description: 'Join the engineering sprint planning meeting to understand current work.', phase: 'week-1', priority: 'medium', dueDate: '2026-07-07', assignee: 'Alex Kumar', status: 'pending' },
 
+    // Week 2
+    { id: 'ot-016', title: 'Corporate Benefits Enrollment', description: 'Review and select your health insurance, PF options, and employee benefits in the portal', phase: 'week-2', priority: 'high', dueDate: '2026-07-08', assignee: 'Alex Kumar', status: 'pending' },
+    { id: 'ot-017', title: '1:1 Cadence with Manager', description: 'Schedule a recurring weekly 1:1 sync with Michael Chen', phase: 'week-2', priority: 'medium', dueDate: '2026-07-07', assignee: 'Alex Kumar', status: 'pending' },
+    { id: 'ot-018', title: 'IT Systems Access Review', description: 'Verify database, cloud accounts, and Slack access with the IT administrator', phase: 'week-2', priority: 'medium', dueDate: '2026-07-09', assignee: 'IT Department', status: 'pending' },
+
     // Month 1
     { id: 'ot-014', title: 'Complete First Feature Task', description: 'Pick a starter task from the backlog and submit a PR by end of week 3.', phase: 'month-1', priority: 'high', dueDate: '2026-07-22', assignee: 'Alex Kumar', status: 'pending' },
     { id: 'ot-015', title: '30-Day Check-in with Manager', description: 'Review first month progress, goals, and any concerns with Michael.', phase: 'month-1', priority: 'medium', dueDate: '2026-07-31', assignee: 'Alex Kumar', status: 'pending' },
+    { id: 'ot-019', title: 'Resolve Relocation Claims', description: 'Submit travel bills and confirm relocation allowance has been credited in payroll', phase: 'month-1', priority: 'medium', dueDate: '2026-07-24', assignee: 'Alex Kumar', status: 'pending' },
   ],
 
   welcomeMessages: [
